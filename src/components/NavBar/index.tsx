@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import { Time } from '../Widget/Time'
 import { CurrentDate } from '../Widget/CurrentDate'
 import { AccessTimeIcon, CalendarTodayIcon } from '../Icons'
-import { FlexWrapper } from '../Common/commonStyle'
+import { FlexWrapper } from '../Common/BaseContainer/commonStyle'
 import { DarkModeToggler } from '../DarkMode'
 import { Theme } from '../../hooks/useDarkMode'
 
@@ -17,8 +17,8 @@ const Nav = styled.nav`
     gap: .9rem;
     align-items: center;
     padding: 20px;
-    background-color: ${({ theme }) => theme.background};
-    color: ${({ theme }) => theme.text};
+    background-color: ${({ theme }) => theme.body};
+    /* color: ${({ theme }) => theme.text}; */
     /* grid-column: 2 / 3;
     grid-row: 1 / 2; */
     grid-area: header;

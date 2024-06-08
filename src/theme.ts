@@ -1,13 +1,29 @@
+// TODO: Find better color schema
+
+export const colors = {
+    white: '#FFFFFF',
+    light: '#DEE4E7',
+    dark: '#37474F',
+    black: '#222222',
+    disabled: '',
+    text: '',
+}
+
 export const lightTheme = {
-    body: '#FFF',
-    text: '#363537',
-    toggleBorder: '#FFF',
-    background: '#363537',
+    primary: '',
+    secondary: '',
+    disabled: '',
+    body: '#DEE4E7',
+    text: '#222222',
+    background: 'lightgray',
+    button: ''
 }
 
 export const darkTheme = {
-    body: '#363537',
-    text: '#FAFAFA',
-    toggleBorder: '#6B8096',
-    background: '#212529',
+    primary: '',
+    secondary: '',
+    body: '#222222',
+    text: '#FFFFFF',
+    background: 'lightgray',
+    button: ''
 }
