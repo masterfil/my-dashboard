@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 export const SectionStyled = styled.section`
     padding: 20px;
-    background-color: ${({ theme }) => theme.background};
+    background-color: ${({ theme }) => theme.body};
     color: ${({ theme }) => theme.text};
     /* grid-column: 1 / 2;
     grid-row: 1 / 3; */

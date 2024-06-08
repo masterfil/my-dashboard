@@ -1,7 +1,7 @@
 import { Calendar } from "./Calendar";
-import { Habit } from "./Habit";
+import { HabitTracker } from "./Habit";
 import { Home } from "./Home";
 import { Notes } from "./Notes";
-import { Todo } from "./Todo";
+import { TodosList } from "./Todo";
 
-export { Calendar, Habit, Home, Notes, Todo };
+export { Calendar, HabitTracker, Home, Notes, TodosList };

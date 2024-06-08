@@ -1,9 +1,9 @@
 import styled from 'styled-components'
 
 const GridContainer = styled.div`
-    padding: 1rem;
+    padding: .8rem;
     transition: all 0.50s linear;
-    background-color: ${({ theme }) => theme.body};
+    background-color: ${({ theme }) => theme.background};
     color: #fff;
     /* grid-column: 2 / 3;
     grid-row: 2 / 3; */
@@ -15,7 +15,7 @@ const GridContainer = styled.div`
     "c1 c2 c3"
     "c4 c4 c5"
     "c4 c4 c6";
-    gap: 20px;
+    gap: .8rem;
 
     @media (max-width: 925px) {
     grid-template-columns: 1fr;
@@ -26,7 +26,7 @@ const GridContainer = styled.div`
 `
 
 const GridBox = styled.div`
-  background-color: ${({ theme }) => theme.background};
+  background-color: ${({ theme }) => theme.body};
   border-radius: 10px;
 
   &:nth-child(1) {

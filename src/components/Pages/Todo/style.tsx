@@ -5,21 +5,27 @@ export const TodoContainer = styled.div`
     width: 680px;
 `
 
-export const InputStyled = styled.input`
+export const InputStyled = styled.input<{roundBorder: boolean}>`
     width: 100%;
     height: 40px;
     padding: 0 .5rem;
-    border-radius: 6px;
+    border-radius: ${({roundBorder}) => roundBorder ? '20px' : '4px'};
     border: 1px solid #d3d3d36b;
     font-size: 1rem;
     box-sizing: border-box;
+    &:focus {
+    outline: none;
+    }
+
 `
 
 export const AddButton = styled.button`
     border: none;
     background: none;
     cursor: pointer;
-        
+    position: absolute;
+    right: 0;
+
     & > svg:hover {
         color: #4b4b4b;
     }
@@ -30,6 +36,8 @@ export const Form = styled.form`
     align-items: center;
     margin-bottom: 1rem;
     width: 100%;
+    position: relative;
+
 `
 
 export const ListItemContainer = styled.ul`
