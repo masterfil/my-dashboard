@@ -24,7 +24,7 @@ export const AddButton = styled.button`
     background: none;
     cursor: pointer;
     position: absolute;
-    right: 0;
+    right: 6px;
 
     & > svg:hover {
         color: #4b4b4b;
@@ -42,7 +42,7 @@ export const Form = styled.form`
 
 export const ListItemContainer = styled.ul`
     list-style: none;
-    width: 648px;
+    width: 670px;
 `
 
 export const TodoItem = styled.li<{isChecked: boolean}>`
@@ -50,12 +50,13 @@ export const TodoItem = styled.li<{isChecked: boolean}>`
     align-items: center;
     justify-content: space-between;
     list-style: none;
-    padding: 12px;
-    border: 1px solid lightgray;
-    border-radius: 6px;
-    margin-bottom: 1rem;
+    height: 40px;
+    padding: 0 8px;
+    /* margin-bottom: 1rem; */
     background-color: ${({ isChecked }) => isChecked ? '#f0f0f0' : 'white'};
     transition: background-color .3s;
+    border-radius: 20px;
+    border: 1px solid #d3d3d36b;
 `
 
 export const TodoInput = styled.input`

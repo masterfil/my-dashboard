@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const TableStyled = styled.table`
   border-collapse: collapse;
-  width: 600px;
+  max-width: 100%;
   text-align: center;
 
   & > th, td {
@@ -18,8 +18,7 @@ export const TableRow = styled.tr`
 `;
 
 export const TableHeader = styled.th`
-  padding-top: 12px;
-  padding-bottom: 12px;
+  padding: 1rem;
   color: white;
   border: 1px solid #ddd;
   width: 50px;

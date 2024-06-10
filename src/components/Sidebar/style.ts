@@ -9,6 +9,8 @@ export const SectionStyled = styled.section`
     grid-row: 1 / 3; */
     grid-area: sidebar;
     padding: 2rem;
+    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
+    z-index: 100;
 `
 
 export const UnorderedList = styled.ul`

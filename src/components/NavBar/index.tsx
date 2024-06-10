@@ -22,6 +22,9 @@ const Nav = styled.nav`
     /* grid-column: 2 / 3;
     grid-row: 1 / 2; */
     grid-area: header;
+    z-index: 100;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
 `
 
 export const NavBar: React.FC<HeaderProps> = ({ theme, toggleTheme }) => {
