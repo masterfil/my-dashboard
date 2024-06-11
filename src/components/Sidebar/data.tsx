@@ -1,4 +1,4 @@
-import { AssignmentIndIcon, CalendarMonthIcon, DescriptionIcon, FormatListBulletedIcon, SpaceDashboardIcon, TimerIcon } from "../Icons";
+import { AssignmentIndIcon, AudiotrackIcon, CalendarMonthIcon, DescriptionIcon, FormatListBulletedIcon, SpaceDashboardIcon, TimerIcon } from "../Icons";
 
 type SidebarItem = {
   id: number;
@@ -39,11 +39,16 @@ export const sidebarData: SidebarItem = [
     icon: <DescriptionIcon sx={{ height: 20, width: 20 }} />,
   },
   {
-    id: 5,
+    id: 6,
+    name: "Spotify",
+    path: "/spotify",
+    icon: <AudiotrackIcon sx={{ height: 20, width: 20 }}/>,
+  },
+  {
+    id: 7,
     name: "Pomodoro",
     path: "/pomodoro",
     icon: <TimerIcon sx={{ height: 20, width: 20 }}/>,
   },
-
 ]
 

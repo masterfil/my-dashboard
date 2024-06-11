@@ -5,11 +5,11 @@ export const TodoContainer = styled.div`
     width: 680px;
 `
 
-export const InputStyled = styled.input<{roundBorder: boolean}>`
+export const InputStyled = styled.input<{roundborder?: boolean}>`
     width: 100%;
     height: 40px;
     padding: 0 .5rem;
-    border-radius: ${({roundBorder}) => roundBorder ? '20px' : '4px'};
+    border-radius: ${({roundborder}) => roundborder ? '20px' : '4px'};
     border: 1px solid #d3d3d36b;
     font-size: 1rem;
     box-sizing: border-box;

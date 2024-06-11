@@ -12,8 +12,8 @@ export const HabitList: React.FC<HabitListProps> = ({ habits }) => {
 
     return (
         <ul>
-            {habits.map(habit =>
-                <li key={habit.id}>{habit.name}
+            {habits.map((habit, index) =>
+                <li key={index}>{habit.name}
                     <TodoActionsWrapper>
                         <EditIcon sx={{ height: 20, width: 20 }}
                         // onClick={() => editTodo(todo.text, todo.id)} 

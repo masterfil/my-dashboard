@@ -12,7 +12,7 @@ interface FormProps {
     placeholder: string
     maxLength: number
     showButton: boolean
-    roundBorder?: boolean
+    roundborder: boolean
 }
 
 export const BaseForm: React.FC<FormProps> = ({ 
@@ -24,8 +24,8 @@ export const BaseForm: React.FC<FormProps> = ({
     id,
     placeholder,
     maxLength,
-    showButton = true,
-    roundBorder = false
+    showButton,
+    roundborder,
 }) => {
     return (
         <Form onSubmit={handleSubmit}>
@@ -37,7 +37,7 @@ export const BaseForm: React.FC<FormProps> = ({
                     placeholder={placeholder}
                     maxLength={maxLength}
                     onChange={handleChange}
-                    roundBorder={roundBorder}
+                    roundborder={roundborder}
                 />
             </LabelStyled>
             {showButton &&

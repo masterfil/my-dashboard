@@ -19,7 +19,7 @@ export const EditTodo: React.FC<EditTodoProps> = ({todo, editTodo}) => {
 
     return (
         <Form onSubmit={handleSubmit}>
-            <InputStyled type="text" placeholder="Edit . . ." value={value} onChange={(e) => setValue(e.target.value)} maxLength={100} roundBorder/>
+            <InputStyled type="text" placeholder="Edit . . ." value={value} onChange={(e) => setValue(e.target.value)} maxLength={100} roundborder/>
             <SaveButton type="submit">Save</SaveButton>
         </Form>
 

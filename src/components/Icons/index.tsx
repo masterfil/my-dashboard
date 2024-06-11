@@ -12,6 +12,7 @@ import TimerIcon from '@mui/icons-material/Timer';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import WbSunnyIcon from '@mui/icons-material/WbSunny';
 import NightlightIcon from '@mui/icons-material/Nightlight';
+import AudiotrackIcon from '@mui/icons-material/Audiotrack';
 
 export {
     SpaceDashboardIcon,
@@ -27,5 +28,6 @@ export {
     TimerIcon,
     MoreVertIcon,
     WbSunnyIcon,
-    NightlightIcon
+    NightlightIcon,
+    AudiotrackIcon
 }

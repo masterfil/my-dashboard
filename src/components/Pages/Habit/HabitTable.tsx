@@ -3,17 +3,18 @@ import { TableHeader, TableRow, TableStyled } from "./style";
 
 interface HabitTableProps {
   habits: Habits[];
-  numberOfDays: number[];
+  days: number[];
   // handleClick: (id: string) => void;
 }
-
-export const HabitTable: React.FC<HabitTableProps> = ({ habits, numberOfDays,
+// TODO: Improve habit table
+export const HabitTable: React.FC<HabitTableProps> = ({ habits, days,
   // handleClick 
 }) => {
   return (
     <TableStyled>
       <thead>
         <TableRow>
+          <TableHeader>Days</TableHeader>
           {habits.map((habit, index) => {
             console.log(index);
             return (
@@ -24,17 +25,28 @@ export const HabitTable: React.FC<HabitTableProps> = ({ habits, numberOfDays,
         </TableRow>
       </thead>
       <tbody>
-        {numberOfDays.map((day, dayIndex) =>
+        {/* {days.map((day, dayIndex) =>
           <TableRow key={dayIndex}>
             {habits.map((_, habitIndex) =>
               <td key={`${habitIndex}-${dayIndex}`}>
-                {habitIndex === 0 ? <p>{day}</p> : <input type="checkbox" name="checkbox" 
+                {habitIndex === 0 ? <p>{day}</p> : <input type="checkbox" name="checkbox"
                 // onClick={() => handleClick(dayIndex)} 
                 />}
               </td>
             )}
           </TableRow>
-        )}
+        )} */}
+        {days.map((_, index) => {
+
+          return (
+            <TableRow key={index}>
+              <td>
+                {index}
+              </td>
+            </TableRow>
+          )
+        })}
+
       </tbody>
     </TableStyled>
   )

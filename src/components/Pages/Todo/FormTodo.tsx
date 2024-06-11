@@ -17,8 +17,8 @@ export const FormTodo: React.FC<FormProps> = ({ handleSubmit, handleChange }) =>
             id="todo"
             placeholder="Write your next task. . ."
             maxLength={100}
-            showButton={true}
-            roundBorder={true}
+            showButton
+            roundborder
         />
     );
 }

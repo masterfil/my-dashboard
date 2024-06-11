@@ -7,6 +7,8 @@ import { Notes } from "./components/Pages/Notes";
 import { Layout } from "./components/Layout";
 import { Theme } from "./hooks/useDarkMode";
 import { HabitTracker } from "./components/Pages";
+import { Spotify } from "./components/Pages/Spotify";
+import { Pomodoro } from "./components/Pages/Pomodoro";
 
 interface RoutesAppProps {
   theme: Theme
@@ -27,6 +29,8 @@ export const RoutesApp: React.FC<RoutesAppProps> = ({ theme, toggleTheme }) => {
         <Route path="/habit" element={<HabitTracker />} />
         <Route path="/calendar" element={<Calendar />} />
         <Route path="/notes" element={<Notes />} />
+        <Route path="/spotify" element={<Spotify/>} />
+        <Route path="/pomodoro" element={<Pomodoro/>} />
         {/* <Route path="/*" element={<ErrorPage />} /> */}
       </Route>
     </Routes>

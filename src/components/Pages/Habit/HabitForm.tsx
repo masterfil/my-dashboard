@@ -17,9 +17,10 @@ const HabitForm: React.FC<HabitFormProps> = ({ handleChange, handleSubmit }) => 
                 id="habit"
                 placeholder="Add new habit. . ."
                 maxLength={100}
-                showButton={true}
+                showButton
                 handleSubmit={handleSubmit}
                 handleChange={handleChange}
+                roundborder={false}
             />
         </HabitFormContaier>
     )

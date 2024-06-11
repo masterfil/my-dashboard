@@ -3,8 +3,8 @@ import { BaseContainer } from "../../Common/BaseContainer";
 import { TitlePage } from "../../Common/Typography";
 import { HabitTable } from "./HabitTable";
 import HabitForm from "./HabitForm";
-import useMonthDays from "../../Utils";
 import { HabitList } from "./HabitList";
+import useMonthDays from "../../../hooks/useMonthDays";
 
 export interface HabitList {
   day: number
@@ -13,7 +13,7 @@ export interface HabitList {
 
 export interface Habits {
   name: string
-  habitList: HabitList
+  // habitList: HabitList
 }
 
 export interface HabitsList {
@@ -23,32 +23,9 @@ export interface HabitsList {
 }
 
 const habitsMock: Habits[] = [
-  {
-    name: 'Days', 
-    habitList: {
-      day: 1,
-      completed: false
-    }
-  },
-  { name: 'Drink water', habitList: { day: 0, completed: false } },
-  { name: 'No Smoke', habitList: { day: 0, completed: false } },
+  { name: 'Drink water', },
+  { name: 'No Smoke', },
 ];
-
-const habitsMockList: HabitsList[] = [
-  [
-    { day: 1, name: 'habit 1', completed: false },
-  ],
-  [
-    { day: 2, name: 'habit 2', completed: false },
-  ],
-  [
-    { day: 3, name: 'habit 3', completed: false },
-
-  ]
-];
-
-
-console.log(habitsMock, 'habitsMock');
 
 export const HabitTracker = () => {
   const [habits, setHabits] = useState<Habits[]>(habitsMock)
@@ -73,10 +50,9 @@ export const HabitTracker = () => {
   // const handleClick = (id: number) => {
   // }
 
-  const numberOfDays = useMonthDays();
+  const days = useMonthDays();
 
-
-  console.log(numberOfDays);
+  console.log(days);
   console.log(habits, 'habits');
 
   return (
@@ -84,7 +60,7 @@ export const HabitTracker = () => {
       <TitlePage>Habit Tracker</TitlePage>
       <HabitForm handleChange={handleChange} handleSubmit={addHabit} />
       <HabitList habits={habits} />
-      <HabitTable habits={habits} numberOfDays={numberOfDays}
+      <HabitTable habits={habits} days={days}
       // handleClick={handleClick}
       />
     </BaseContainer>
