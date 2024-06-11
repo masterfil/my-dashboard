@@ -98,6 +98,7 @@ export const TodoActionsWrapper = styled.div`
     justify-content: flex-end;
     gap: 3px;
     cursor: pointer;
+    color: #4b4b4b;
     
     & > svg:hover {
         color: #4b4b4b;
