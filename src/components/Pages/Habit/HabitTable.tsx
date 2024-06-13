@@ -1,13 +1,14 @@
-import { Habits } from ".";
+import { TaskCollection, } from ".";
 import { TableHeader, TableRow, TableStyled } from "./style";
 
 interface HabitTableProps {
-  habits: Habits[];
+  habits: string[];
   days: number[];
-  // handleClick: (id: string) => void;
+  habitsList: TaskCollection;
+  handleCheckboxClick: (habitName: string, dayIndex: number) => void
 }
 // TODO: Improve habit table
-export const HabitTable: React.FC<HabitTableProps> = ({ habits, days,
+export const HabitTable: React.FC<HabitTableProps> = ({ habits, days, habitsList, handleCheckboxClick
   // handleClick 
 }) => {
   return (
@@ -18,35 +19,29 @@ export const HabitTable: React.FC<HabitTableProps> = ({ habits, days,
           {habits.map((habit, index) => {
             console.log(index);
             return (
-              <TableHeader key={index}>{habit.name}</TableHeader>
+              <TableHeader key={index}>{habit}</TableHeader>
             )
           }
           )}
         </TableRow>
       </thead>
       <tbody>
-        {/* {days.map((day, dayIndex) =>
-          <TableRow key={dayIndex}>
-            {habits.map((_, habitIndex) =>
-              <td key={`${habitIndex}-${dayIndex}`}>
-                {habitIndex === 0 ? <p>{day}</p> : <input type="checkbox" name="checkbox"
-                // onClick={() => handleClick(dayIndex)} 
-                />}
+        {days.map((day, index) => (
+          <TableRow key={index}>
+            <td>{day}</td>
+            {habits.map((habit, habitIndex) => (
+              <td key={habitIndex}>
+                <input
+                  type="checkbox"
+                  name={`checkbox-${index}-${habitIndex}`}
+                  // checked={habitsList[habit]?.[index].isCompleted}
+                  onClick={() => handleCheckboxClick(habit, index)}
+                  readOnly
+                />
               </td>
-            )}
+            ))}
           </TableRow>
-        )} */}
-        {days.map((_, index) => {
-
-          return (
-            <TableRow key={index}>
-              <td>
-                {index}
-              </td>
-            </TableRow>
-          )
-        })}
-
+        ))}
       </tbody>
     </TableStyled>
   )

@@ -1,10 +1,9 @@
-import { SetStateAction } from 'react'
 import { BaseForm } from '../../Common/BaseForm'
 import { HabitFormContaier } from './style'
 
 interface HabitFormProps {
     handleSubmit: (e: React.FormEvent<HTMLFormElement>) => void
-    handleChange: (e: { target: { value: SetStateAction<string> } }) => void
+    handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void
 }
 
 const HabitForm: React.FC<HabitFormProps> = ({ handleChange, handleSubmit }) => {
@@ -20,7 +19,6 @@ const HabitForm: React.FC<HabitFormProps> = ({ handleChange, handleSubmit }) => 
                 showButton
                 handleSubmit={handleSubmit}
                 handleChange={handleChange}
-                roundborder={false}
             />
         </HabitFormContaier>
     )

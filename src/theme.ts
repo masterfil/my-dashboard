@@ -14,7 +14,7 @@ export const lightTheme = {
     secondary: '#03a9f4',  // Light Blue 500
     text: '#000000',
     body: '#ffffff',
-    background: '#ffffff',
+    background: '#F9F9F9',
 
     toggleBorder: '#BDBDBD',  // Grey 400
     gradient: 'linear-gradient(#e3f2fd, #bbdefb)',  // Light Blue 50 to Light Blue 100
@@ -25,7 +25,7 @@ export const darkTheme = {
     primary: '#bb86fc',  // Deep Purple A200
     secondary: '#03dac6',  // Teal A200
     text: '#ffffff',
-    body: '#303030',
+    body: '#171717',
     background: '#303030',  // Grey 800
 
     toggleBorder: '#757575',  // Grey 600

@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Todos } from '.'
-import { Form, InputStyled, SaveButton } from './style'
+import { SaveButton } from './style'
+import { Form, InputStyled } from '../../Common/BaseForm/style'
 
 interface EditTodoProps {
     todo: Todos
@@ -19,7 +20,7 @@ export const EditTodo: React.FC<EditTodoProps> = ({todo, editTodo}) => {
 
     return (
         <Form onSubmit={handleSubmit}>
-            <InputStyled type="text" placeholder="Edit . . ." value={value} onChange={(e) => setValue(e.target.value)} maxLength={100} roundborder/>
+            <InputStyled type="text" placeholder="Edit . . ." value={value} onChange={(e) => setValue(e.target.value)} maxLength={100} />
             <SaveButton type="submit">Save</SaveButton>
         </Form>
 

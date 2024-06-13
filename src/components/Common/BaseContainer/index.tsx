@@ -4,24 +4,6 @@ const BaseContainerStyled = styled.div`
     background-color: ${({ theme }) => theme.background};
     padding: 1rem;
     overflow-y: auto;
-
-    ::-webkit-scrollbar {
-    width: 8px; /* width of the entire scrollbar */
-  }
-
-  ::-webkit-scrollbar-track {
-    background: none; /* color of the tracking area */
-  }
-
-  ::-webkit-scrollbar-thumb {
-    background-color: #888; /* color of the scroll thumb */
-    border-radius: 10px; /* roundness of the scroll thumb */
-  }
-
-  ::-webkit-scrollbar-thumb:hover {
-    background: #555; /* color of the scroll thumb when hovered */
-  }
-
 `
 
 const ContentWrapper = styled.div`

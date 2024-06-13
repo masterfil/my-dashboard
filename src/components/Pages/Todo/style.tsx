@@ -5,44 +5,9 @@ export const TodoContainer = styled.div`
     width: 680px;
 `
 
-export const InputStyled = styled.input<{roundborder?: boolean}>`
-    width: 100%;
-    height: 40px;
-    padding: 0 .5rem;
-    border-radius: ${({roundborder}) => roundborder ? '20px' : '4px'};
-    border: 1px solid #d3d3d36b;
-    font-size: 1rem;
-    box-sizing: border-box;
-    &:focus {
-    outline: none;
-    }
-
-`
-
-export const AddButton = styled.button`
-    border: none;
-    background: none;
-    cursor: pointer;
-    position: absolute;
-    right: 6px;
-
-    & > svg:hover {
-        color: #4b4b4b;
-    }
-`
-
-export const Form = styled.form`
-    display: flex;
-    align-items: center;
-    margin-bottom: 1rem;
-    width: 100%;
-    position: relative;
-
-`
-
 export const ListItemContainer = styled.ul`
     list-style: none;
-    width: 670px;
+    width: 100%;
 `
 
 export const TodoItem = styled.li<{isChecked: boolean}>`
@@ -50,13 +15,12 @@ export const TodoItem = styled.li<{isChecked: boolean}>`
     align-items: center;
     justify-content: space-between;
     list-style: none;
-    height: 40px;
-    padding: 0 8px;
-    /* margin-bottom: 1rem; */
+    padding: 8px 10px;
+    font-size: 1rem;
     background-color: ${({ isChecked }) => isChecked ? '#f0f0f0' : 'white'};
     transition: background-color .3s;
-    border-radius: 20px;
     border: 1px solid #d3d3d36b;
+    margin-bottom: 1rem;
 `
 
 export const TodoInput = styled.input`
@@ -65,10 +29,6 @@ export const TodoInput = styled.input`
   height: 1rem;
   margin: 0;
   cursor: pointer;
-`;
-
-export const LabelStyled = styled.label`
-    width: 100%;
 `;
 
 export const TextWrapper = styled.div`

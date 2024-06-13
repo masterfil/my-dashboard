@@ -15,7 +15,7 @@ export const Todo: React.FC<TodoItemsProps> = ({ todo, toggleChecked, deleteTodo
   return (
     <TodoItem isChecked={isChecked}>
       <TodoWrapper>
-        <TodoInput type="radio" name={todo.text} value={todo.text} checked={todo.isChecked} onClick={() => toggleChecked(todo.id)} />
+        <TodoInput type="checkbox" name={todo.text} value={todo.text} checked={todo.isChecked} onClick={() => toggleChecked(todo.id)} />
         <TextTodo isChecked={isChecked}>{todo.text}</TextTodo>
       </TodoWrapper>
       <TodoActionsWrapper>

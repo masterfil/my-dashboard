@@ -1,10 +1,9 @@
-import { SetStateAction } from "react";
 import { AddCircleIcon } from "../../Icons";
-import { AddButton, Form, InputStyled, LabelStyled } from "../../Pages/Todo/style";
+import { AddButton, Form, InputStyled, LabelStyled } from "./style";
 
 interface FormProps {
     handleSubmit: (e: React.FormEvent<HTMLFormElement>) => void
-    handleChange: (e: { target: { value: SetStateAction<string> } }) => void
+    handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void
     htmlFor: string
     type: string
     name: string
@@ -12,11 +11,11 @@ interface FormProps {
     placeholder: string
     maxLength: number
     showButton: boolean
-    roundborder: boolean
+    borderRound?: boolean
 }
 
-export const BaseForm: React.FC<FormProps> = ({ 
-    handleSubmit, 
+export const BaseForm: React.FC<FormProps> = ({
+    handleSubmit,
     handleChange,
     htmlFor,
     type,
@@ -25,21 +24,20 @@ export const BaseForm: React.FC<FormProps> = ({
     placeholder,
     maxLength,
     showButton,
-    roundborder,
+    borderRound = false,
 }) => {
     return (
         <Form onSubmit={handleSubmit}>
-            <LabelStyled htmlFor={htmlFor}>
-                <InputStyled
-                    type={type}
-                    name={name}
-                    id={id}
-                    placeholder={placeholder}
-                    maxLength={maxLength}
-                    onChange={handleChange}
-                    roundborder={roundborder}
-                />
-            </LabelStyled>
+            <LabelStyled htmlFor={htmlFor}></LabelStyled>
+            <InputStyled
+                type={type}
+                name={name}
+                id={id}
+                placeholder={placeholder}
+                maxLength={maxLength}
+                onChange={handleChange}
+                borderRound={borderRound}
+            />
             {showButton &&
                 <AddButton type="submit">
                     <AddCircleIcon sx={{ height: 32, width: 32 }} />
