@@ -4,16 +4,16 @@ import { EditForm } from "../../Common/EditForm";
 
 interface EditHabitProps {
   habit: Habits;
-  handleEditHabit: (value: string) => void;
+  handleEditHabit: (value: string, newHabitName: string) => void;
 }
 
 export const EditHabit: React.FC<EditHabitProps> = ({habit, handleEditHabit}) => {
 
   const [value, setValue] = useState(habit.name)
 
-  const handleSubmit = (e: { preventDefault: () => void }) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    handleEditHabit(habit.name);
+    handleEditHabit(habit.name, value);
     setValue("");
   };
 

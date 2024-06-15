@@ -8,7 +8,7 @@ import { ListHabit } from "./style";
 interface HabitListProps {
   habits: Habits[];
   handleDeleteHabit: (habitName: string) => void;
-  handleEditHabit: (habitName: string) => void;
+  handleEditHabit: (habitName: string, newHabitName: string) => void;
   // calculateHabitCompleted: (habitName: string) => void;
 }
 
@@ -27,12 +27,10 @@ export const HabitList: React.FC<HabitListProps> = ({
           ) : (
             <>
               {habit.name}
-              {}
-              {/* {calculateHabitCompleted(habit.name)} */}
               <TodoActionsWrapper>
                 <EditIcon
                   sx={{ height: 20, width: 20 }}
-                  onClick={() => handleEditHabit(habit.name)}
+                  onClick={() => handleEditHabit(habit.name, habit.name)}
                 />
                 <DeleteIcon
                   sx={{ height: 20, width: 20 }}

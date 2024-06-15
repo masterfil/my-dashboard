@@ -39,13 +39,11 @@ export const HabitsTracker = () => {
   const days = useMonthDays();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    console.log("🚀 ~ handleChange ~ e.target.value:", e.target.value);
     setInputValue(e.target.value);
   };
 
   const addHabit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log("🚀 ~ TodosList ~ inputValue:", inputValue);
     if (inputValue.trim() !== "") {
       setHabits([...habits, { name: inputValue, isEditing: false }]);
       e.currentTarget.reset();
@@ -53,11 +51,15 @@ export const HabitsTracker = () => {
   };
 
   const handleCheckboxClick = (habitName: string, habitDay: number) => {
-    trackHabits[habitName].map((habit) => {
-      if (habit.day === habitDay) {
-        habit.isCompleted = !habit.isCompleted;
-        console.log(trackHabits, "trackHabits");
-      }
+    setTrackHabits((prevTrackHabits) => {
+      const updatedTrackHabits = { ...prevTrackHabits };
+      updatedTrackHabits[habitName] = updatedTrackHabits[habitName].map(
+        (habit) =>
+          habit.day === habitDay
+            ? { ...habit, isCompleted: !habit.isCompleted }
+            : habit
+      );
+      return updatedTrackHabits;
     });
   };
 
@@ -65,27 +67,21 @@ export const HabitsTracker = () => {
     setHabits((prevState) =>
       prevState.filter((habit) => habit.name !== habitName)
     );
-    console.log(habitName, "habitName");
   };
 
-  const handleEditHabit = (habitName: string) => {
-    console.log(habitName, "habitName");
+  const handleEditHabit = (habitName: string, newHabitName: string) => {
+    setHabits((prevState) =>
+      prevState.map((habit) => {
+        return habit.name === habitName
+          ? {
+              ...habit,
+              name: newHabitName || habitName,
+              isEditing: !habit.isEditing,
+            }
+          : habit;
+      })
+    );
   };
-
-  // const calculateHabitCompleted = (habitName: string) => {
-  //   const habit = trackHabits[habitName];
-
-  //   if (habit) {
-  //     // Check if habit is defined
-  //     habit.map((habit) => {
-  //       if (habit.isCompleted) {
-  //         console.log(habit, "habit");
-  //       }
-  //     });
-  //   } else {
-  //     console.log(`Habit with name ${habitName} not found.`);
-  //   }
-  // };
 
   useEffect(() => {
     const habitsList: TaskCollection = {};
@@ -100,13 +96,8 @@ export const HabitsTracker = () => {
       habitsList[habit.name] = habitTasks;
     });
 
-    console.log(habitsList, "habitsList");
     setTrackHabits(habitsList);
   }, [days, habits]);
-
-  console.log(days);
-  console.log(habits, "habits");
-  console.log(trackHabits, "trackHabits");
 
   return (
     <BaseContainer>
@@ -117,7 +108,6 @@ export const HabitsTracker = () => {
           habits={habits}
           handleDeleteHabit={handleDeleteHabit}
           handleEditHabit={handleEditHabit}
-          // calculateHabitCompleted={calculateHabitCompleted}
         />
       </Wrapper>
       <HabitTable

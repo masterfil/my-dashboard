@@ -18,13 +18,11 @@ export const TodosList = () => {
   const [inputValue, setInputValue] = useState('')
 
   const handleChange = (e: { target: { value: SetStateAction<string> } }) => {
-    console.log("🚀 ~ handleChange ~ e.target.value:", e.target.value)
     setInputValue(e.target.value)
   }
 
   const addTodo = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    console.log("🚀 ~ TodosList ~ inputValue:", inputValue)
     if (inputValue.trim() !== '') {
       setTodos([...todos, { id: uuidv4(), text: inputValue, isChecked: false, isEditing: false }])
       e.currentTarget.reset();

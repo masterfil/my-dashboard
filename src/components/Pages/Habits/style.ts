@@ -28,7 +28,7 @@ export const TableHeader = styled.th`
 
 export const Wrapper = styled.div`
   width: 400px;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 `;
 
 export const ListHabit = styled.li`
