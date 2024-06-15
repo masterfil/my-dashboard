@@ -27,7 +27,6 @@ export const TodosList = () => {
     console.log("🚀 ~ TodosList ~ inputValue:", inputValue)
     if (inputValue.trim() !== '') {
       setTodos([...todos, { id: uuidv4(), text: inputValue, isChecked: false, isEditing: false }])
-      setInputValue('')
       e.currentTarget.reset();
     }
   }

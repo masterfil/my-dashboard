@@ -5,7 +5,8 @@ export const TableStyled = styled.table`
   max-width: 100%;
   text-align: center;
 
-  & > th, td {
+  & > th,
+  td {
     border: 1px solid #ddd;
     padding: 8px;
   }
@@ -25,6 +26,20 @@ export const TableHeader = styled.th`
   max-width: 100%;
 `;
 
-export const HabitFormContaier = styled.div`
+export const Wrapper = styled.div`
   width: 400px;
+  margin-bottom: 1rem;
+`;
+
+export const ListHabit = styled.li`
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
+
+export const HabitContainer = styled.div`
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
 `;

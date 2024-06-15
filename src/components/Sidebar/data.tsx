@@ -23,7 +23,7 @@ export const sidebarData: SidebarItem = [
   {
     id: 3,
     name: "Habit Tracker",
-    path: "/habit",
+    path: "/habits",
     icon: <AssignmentIndIcon sx={{ height: 20, width: 20 }} />,
   },
   {

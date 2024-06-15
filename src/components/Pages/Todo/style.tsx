@@ -1,8 +1,7 @@
 import styled from "styled-components";
 
 export const TodoContainer = styled.div`
-    padding: 2rem;
-    width: 680px;
+    width: 400px;
 `
 
 export const ListItemContainer = styled.ul`
@@ -17,10 +16,11 @@ export const TodoItem = styled.li<{isChecked: boolean}>`
     list-style: none;
     padding: 8px 10px;
     font-size: 1rem;
-    background-color: ${({ isChecked }) => isChecked ? '#f0f0f0' : 'white'};
+    /* background-color: ${({ isChecked }) => isChecked ? '#f0f0f0' : ''}; */
     transition: background-color .3s;
     border: 1px solid #d3d3d36b;
     margin-bottom: 1rem;
+    border-radius: 4px;
 `
 
 export const TodoInput = styled.input`
@@ -43,7 +43,8 @@ export const TextTodo = styled.p<{isChecked: boolean}>`
     word-wrap: break-word;
     font-size: 1rem;
     text-decoration: ${({ isChecked }) => isChecked ? 'line-through' : 'none'};
-    color: ${({ isChecked }) => isChecked ? 'gray' : 'black'};
+    /* color: ${({ isChecked }) => isChecked ? 'gray' : 'black'}; */
+    color: ${({ theme }) => theme.text};
     transition: color .3s, text-decoration .3s;
 `;
 
@@ -64,12 +65,3 @@ export const TodoActionsWrapper = styled.div`
         color: #4b4b4b;
     }
 `;
-
-export const SaveButton = styled.button`
-    font-size: 1rem;
-    border-radius: 4px;
-    padding: 0 4px;
-    cursor: pointer;
-    background-color: #4b4b4b;
-    color: white;
-`

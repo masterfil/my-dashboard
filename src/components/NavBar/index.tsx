@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import { Time } from '../Widget/Time'
 import { CurrentDate } from '../Widget/CurrentDate'
 import { AccessTimeIcon, CalendarTodayIcon } from '../Icons'
-import { FlexWrapper } from '../Common/BaseContainer/commonStyle'
+import { FlexWrapper } from '../Common/commonStyle'
 import { DarkModeToggler } from '../DarkMode'
 import { Theme } from '../../hooks/useDarkMode'
 

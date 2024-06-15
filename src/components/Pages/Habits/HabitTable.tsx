@@ -1,8 +1,8 @@
-import { TaskCollection, } from ".";
+import { Habits, TaskCollection, } from ".";
 import { TableHeader, TableRow, TableStyled } from "./style";
 
 interface HabitTableProps {
-  habits: string[];
+  habits: Habits[];
   days: number[];
   habitsList: TaskCollection;
   handleCheckboxClick: (habitName: string, dayIndex: number) => void
@@ -17,9 +17,8 @@ export const HabitTable: React.FC<HabitTableProps> = ({ habits, days, habitsList
         <TableRow>
           <TableHeader>Days</TableHeader>
           {habits.map((habit, index) => {
-            console.log(index);
             return (
-              <TableHeader key={index}>{habit}</TableHeader>
+              <TableHeader key={index}>{habit.name}</TableHeader>
             )
           }
           )}
@@ -35,7 +34,7 @@ export const HabitTable: React.FC<HabitTableProps> = ({ habits, days, habitsList
                   type="checkbox"
                   name={`checkbox-${index}-${habitIndex}`}
                   // checked={habitsList[habit]?.[index].isCompleted}
-                  onClick={() => handleCheckboxClick(habit, index)}
+                  onClick={() => handleCheckboxClick(habit.name, day)}
                   readOnly
                 />
               </td>

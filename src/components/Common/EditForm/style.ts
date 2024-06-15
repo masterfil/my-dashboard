@@ -1,4 +1,4 @@
-import { styled } from "styled-components";
+import styled from 'styled-components';
 
 export const Form = styled.form`
   display: flex;
@@ -12,6 +12,8 @@ export const Form = styled.form`
 export const InputStyled = styled.input<{ borderRound?: boolean }>`
   width: 100%;
   font-size: 1rem;
+  background: unset;
+  color: ${({theme}) => theme.text};
   padding: 8px 10px;
   box-sizing: border-box;
   border-radius: ${({ borderRound }) => (borderRound ? "25px" : "4px")};
@@ -19,26 +21,15 @@ export const InputStyled = styled.input<{ borderRound?: boolean }>`
   &:focus {
     outline: 1px solid #d3d3d36b;
     } 
+`;
 
-  /* height: 40px;
-    padding: 0 .5rem;
-    border: 1px solid #d3d3d36b;
+export const SaveButton = styled.button`
     font-size: 1rem;
-    */
-`;
-
-export const LabelStyled = styled.label``;
-
-export const AddButton = styled.button`
-  width: 32px;
-  height: 32px;
-  border: none;
-  background: none;
-  cursor: pointer;
-  position: absolute;
-  right: 2px;
-
-  & > svg:hover {
-    color: #4b4b4b;
-  }
-`;
+    border-radius: 4px;
+    padding: 0 4px;
+    cursor: pointer;
+    background-color: #4b4b4b;
+    color: white;
+    position: absolute;
+    right: 6px;
+`
