@@ -12,7 +12,8 @@ export const TableStyled = styled.table`
   }
 `;
 
-export const TableRow = styled.tr`
+export const TableRow = styled.tr<{bgColor?: boolean}>`
+  background-color: ${({ bgColor }) => (bgColor ? "rgba(0, 0, 0, 0.5)" : "")};
   &:hover {
     background-color: rgba(0, 0, 0, 0.5);
   }

@@ -28,6 +28,7 @@ const GridContainer = styled.div`
 const GridBox = styled.div`
   background-color: ${({ theme }) => theme.body};
   border-radius: 10px;
+  box-shadow: 0px 0px 25px 0px rgba(0,0,0,0.1);
 
   &:nth-child(1) {
     grid-area: c1;

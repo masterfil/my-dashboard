@@ -1,4 +1,3 @@
-import SpaceDashboardIcon from '@mui/icons-material/SpaceDashboard';
 import FormatListBulletedIcon from '@mui/icons-material/FormatListBulleted';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import DescriptionIcon from '@mui/icons-material/Description';
@@ -13,9 +12,9 @@ import MoreVertIcon from '@mui/icons-material/MoreVert';
 import WbSunnyIcon from '@mui/icons-material/WbSunny';
 import NightlightIcon from '@mui/icons-material/Nightlight';
 import AudiotrackIcon from '@mui/icons-material/Audiotrack';
+import HomeIcon from '@mui/icons-material/Home';
 
 export {
-    SpaceDashboardIcon,
     FormatListBulletedIcon,
     CalendarMonthIcon,
     DescriptionIcon,
@@ -29,5 +28,6 @@ export {
     MoreVertIcon,
     WbSunnyIcon,
     NightlightIcon,
-    AudiotrackIcon
+    AudiotrackIcon,
+    HomeIcon
 }

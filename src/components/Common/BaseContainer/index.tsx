@@ -12,7 +12,7 @@ const ContentWrapper = styled.div`
     width: 100%;
     height: 100%;
     overflow-y: auto;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 0px 25px 0px rgba(0,0,0,0.1);
     padding: 2rem;
     box-sizing: border-box;
 `

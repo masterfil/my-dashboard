@@ -7,10 +7,6 @@ import { HabitList } from "./HabitList";
 import { useMonthDays } from "../../../hooks/useMonthDays";
 import { Wrapper } from "./style";
 
-export interface HabitList {
-  day: number;
-  completed: boolean;
-}
 export interface Task {
   id: number;
   title: string;
@@ -36,7 +32,7 @@ export const HabitsTracker = () => {
   const [habits, setHabits] = useState<Habits[]>(habitsMock);
   const [inputValue, setInputValue] = useState("");
   const [trackHabits, setTrackHabits] = useState<TaskCollection>({});
-  const days = useMonthDays();
+  const { day, days } = useMonthDays();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInputValue(e.target.value);
@@ -97,6 +93,8 @@ export const HabitsTracker = () => {
     });
 
     setTrackHabits(habitsList);
+    console.log(trackHabits, "trackHabits");
+    
   }, [days, habits]);
 
   return (
@@ -113,8 +111,9 @@ export const HabitsTracker = () => {
       <HabitTable
         habits={habits}
         days={days}
-        habitsList={trackHabits}
+        // habitsList={trackHabits}
         handleCheckboxClick={handleCheckboxClick}
+        currentDay={day}
       />
     </BaseContainer>
   );

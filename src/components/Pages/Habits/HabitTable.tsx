@@ -1,15 +1,18 @@
-import { Habits, TaskCollection, } from ".";
+import { Habits } from ".";
 import { TableHeader, TableRow, TableStyled } from "./style";
 
 interface HabitTableProps {
   habits: Habits[];
+  currentDay: number;
   days: number[];
-  habitsList: TaskCollection;
-  handleCheckboxClick: (habitName: string, dayIndex: number) => void
+  handleCheckboxClick: (habitName: string, dayIndex: number) => void;
 }
-// TODO: Improve habit table
-export const HabitTable: React.FC<HabitTableProps> = ({ habits, days, habitsList, handleCheckboxClick
-  // handleClick 
+
+export const HabitTable: React.FC<HabitTableProps> = ({
+  habits,
+  currentDay,
+  days,
+  handleCheckboxClick,
 }) => {
   return (
     <TableStyled>
@@ -17,23 +20,19 @@ export const HabitTable: React.FC<HabitTableProps> = ({ habits, days, habitsList
         <TableRow>
           <TableHeader>Days</TableHeader>
           {habits.map((habit, index) => {
-            return (
-              <TableHeader key={index}>{habit.name}</TableHeader>
-            )
-          }
-          )}
+            return <TableHeader key={index}>{habit.name}</TableHeader>;
+          })}
         </TableRow>
       </thead>
       <tbody>
         {days.map((day, index) => (
-          <TableRow key={index}>
+          <TableRow key={index} bgColor={day == currentDay}>
             <td>{day}</td>
             {habits.map((habit, habitIndex) => (
               <td key={habitIndex}>
                 <input
                   type="checkbox"
                   name={`checkbox-${index}-${habitIndex}`}
-                  // checked={habitsList[habit]?.[index].isCompleted}
                   onClick={() => handleCheckboxClick(habit.name, day)}
                   readOnly
                 />
@@ -43,5 +42,5 @@ export const HabitTable: React.FC<HabitTableProps> = ({ habits, days, habitsList
         ))}
       </tbody>
     </TableStyled>
-  )
-}
+  );
+};

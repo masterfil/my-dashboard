@@ -1,5 +1,5 @@
 import React from "react";
-import { TodoActionsWrapper } from "../Todo/style";
+import { TextTodo, TodoActionsWrapper } from "../Todo/style";
 import { DeleteIcon, EditIcon, MoreVertIcon } from "../../Icons";
 import { Habits } from ".";
 import { EditHabit } from "./EditHabit";
@@ -26,7 +26,8 @@ export const HabitList: React.FC<HabitListProps> = ({
             <EditHabit handleEditHabit={handleEditHabit} habit={habit} />
           ) : (
             <>
-              {habit.name}
+            {/* TODO: improve name component */}
+              <TextTodo isChecked={false}>{habit.name}</TextTodo>
               <TodoActionsWrapper>
                 <EditIcon
                   sx={{ height: 20, width: 20 }}

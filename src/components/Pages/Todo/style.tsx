@@ -34,7 +34,7 @@ export const TodoInput = styled.input`
 export const TextWrapper = styled.div`
     margin-bottom: 1rem;
     & > p {
-        font-size: .9rem;
+        font-size: .875rem;
     }
 `;
 
