@@ -26,7 +26,7 @@ export const HabitTable: React.FC<HabitTableProps> = ({
       </thead>
       <tbody>
         {days.map((day, index) => (
-          <TableRow key={index} bgColor={day == currentDay}>
+          <TableRow key={index} bgColor={day === currentDay}>
             <td>{day}</td>
             {habits.map((habit, habitIndex) => (
               <td key={habitIndex}>

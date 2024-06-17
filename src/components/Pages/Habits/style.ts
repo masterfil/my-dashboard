@@ -25,6 +25,7 @@ export const TableHeader = styled.th`
   border: 1px solid #ddd;
   width: 50px;
   max-width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
 `;
 
 export const Wrapper = styled.div`

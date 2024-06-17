@@ -21,7 +21,6 @@ export const UnorderedList = styled.ul`
 
 export const ListItem = styled.li`
   cursor: pointer;
-  margin-bottom: 4px;
 `;
 
 export const ListLink = styled(Link)`
@@ -35,7 +34,7 @@ export const ListLink = styled(Link)`
   &:hover {
     border-radius: 6px;
     transition: background-color 0.3s;
-    background-color: ${({theme}) => theme.toggleBorder};
+    background-color: #333333;
   }
 
   &:focus {
