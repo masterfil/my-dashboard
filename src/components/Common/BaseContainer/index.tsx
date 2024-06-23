@@ -2,7 +2,7 @@ import { styled } from "styled-components"
 
 const BaseContainerStyled = styled.div`
     background-color: ${({ theme }) => theme.background};
-    padding: 1rem;
+    padding: .8rem;
     overflow-y: auto;
 `
 

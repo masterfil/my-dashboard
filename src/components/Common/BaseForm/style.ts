@@ -14,7 +14,7 @@ export const InputStyled = styled.input<{ borderRound?: boolean }>`
   font-size: 1rem;
   padding: 8px 10px;
   box-sizing: border-box;
-  border-radius: ${({ borderRound }) => (borderRound ? "25px" : "4px")};
+  border-radius: ${({ borderRound }) => (borderRound ? "25px" : "6px")};
   border: 1px solid #d3d3d36b;
   &:focus {
     outline: 1px solid #d3d3d36b;
@@ -30,15 +30,16 @@ export const InputStyled = styled.input<{ borderRound?: boolean }>`
 export const LabelStyled = styled.label``;
 
 export const AddButton = styled.button`
-  width: 32px;
-  height: 32px;
   border: none;
   background: none;
   cursor: pointer;
   position: absolute;
   right: 2px;
+  width: 28px;
+  height: 28px;
 
   & > svg:hover {
     color: #4b4b4b;
   }
+
 `;

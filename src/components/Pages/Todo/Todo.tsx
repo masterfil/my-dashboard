@@ -1,6 +1,6 @@
 import React from 'react'
 import { TextTodo, TodoActionsWrapper, TodoInput, TodoItem, TodoWrapper } from './style'
-import { DeleteIcon, EditIcon, MoreVertIcon } from '../../Icons'
+import { DeleteIcon, EditIcon } from '../../Icons'
 import { Todos } from '.'
 
 interface TodoItemsProps {
@@ -21,7 +21,6 @@ export const Todo: React.FC<TodoItemsProps> = ({ todo, toggleChecked, deleteTodo
       <TodoActionsWrapper>
         <EditIcon sx={{ height: 20, width: 20 }} onClick={() => editTodo(todo.text, todo.id)} />
         <DeleteIcon sx={{ height: 20, width: 20 }} onClick={() => deleteTodo(todo.id)} />
-        <MoreVertIcon sx={{ height: 20, width: 20 }} />
       </TodoActionsWrapper>
     </TodoItem>
   )

@@ -12,7 +12,7 @@ interface LayoutProps {
 const DashboardContainer = styled.div`
     height: 100vh;
     display: grid;
-    grid-template-columns: 250px 1fr;
+    grid-template-columns: 240px 1fr;
     grid-template-rows: 60px 1fr;
     grid-template-areas: 
     "sidebar header"

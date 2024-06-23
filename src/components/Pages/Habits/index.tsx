@@ -24,8 +24,8 @@ export interface Habits {
 }
 
 const habitsMock = [
-  { name: "Drink water", isEditing: false },
-  { name: "No Smoke", isEditing: false },
+  { name: "Habit 1", isEditing: false },
+  { name: "Habit 2", isEditing: false },
 ];
 
 export const HabitsTracker = () => {

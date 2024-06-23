@@ -13,6 +13,8 @@ import WbSunnyIcon from '@mui/icons-material/WbSunny';
 import NightlightIcon from '@mui/icons-material/Nightlight';
 import AudiotrackIcon from '@mui/icons-material/Audiotrack';
 import HomeIcon from '@mui/icons-material/Home';
+import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
+import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 
 export {
     FormatListBulletedIcon,
@@ -30,4 +32,6 @@ export {
     NightlightIcon,
     AudiotrackIcon,
     HomeIcon,
+    KeyboardArrowLeftIcon,
+    KeyboardArrowRightIcon
 }

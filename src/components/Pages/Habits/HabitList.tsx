@@ -1,6 +1,6 @@
 import React from "react";
 import { TextTodo, TodoActionsWrapper } from "../Todo/style";
-import { DeleteIcon, EditIcon, MoreVertIcon } from "../../Icons";
+import { DeleteIcon, EditIcon } from "../../Icons";
 import { Habits } from ".";
 import { EditHabit } from "./EditHabit";
 import { ListHabit } from "./style";
@@ -37,7 +37,6 @@ export const HabitList: React.FC<HabitListProps> = ({
                   sx={{ height: 20, width: 20 }}
                   onClick={() => handleDeleteHabit(habit.name)}
                 />
-                <MoreVertIcon sx={{ height: 20, width: 20 }} />
               </TodoActionsWrapper>
             </>
           )}

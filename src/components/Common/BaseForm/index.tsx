@@ -40,7 +40,7 @@ export const BaseForm: React.FC<FormProps> = ({
             />
             {showButton &&
                 <AddButton type="submit">
-                    <AddCircleIcon sx={{ height: 32, width: 32 }} />
+                    <AddCircleIcon sx={{ height: 28, width: 28 }} />
                 </AddButton>
             }
         </Form>

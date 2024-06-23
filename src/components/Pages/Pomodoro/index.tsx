@@ -92,7 +92,7 @@ export const Pomodoro = () => {
           </ButtonTimer>
         </ButtonWrapper>
         <TomatosContainer>
-          <Text>Tomatos counter: {pomodoroCounter}</Text>
+          <Text>Daily Tomatos counter: {pomodoroCounter}</Text>
           <div>{tomatoCounter()}</div>
         </TomatosContainer>
       </TimerContainer>

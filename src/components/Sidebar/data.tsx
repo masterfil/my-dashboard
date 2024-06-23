@@ -9,43 +9,43 @@ type SidebarItem = {
 
 export const sidebarData: SidebarItem = [
   {
-    id: 1,
+    id: 0,
     name: "Home",
     path: "/",
     icon: <HomeIcon sx={{ height: 20, width: 20 }} />,
   },
   {
-    id: 2,
+    id: 1,
     name: "Todo List",
     path: "/todo",
     icon: <FormatListBulletedIcon sx={{ height: 20, width: 20 }} />,
   },
   {
-    id: 3,
+    id: 2,
     name: "Habit Tracker",
     path: "/habits",
     icon: <AssignmentIndIcon sx={{ height: 20, width: 20 }} />,
   },
   {
-    id: 4,
+    id: 3,
     name: "Calendar",
     path: "/calendar",
     icon: <CalendarMonthIcon sx={{ height: 20, width: 20 }} />,
   },
   {
-    id: 5,
+    id: 4,
     name: "Notes",
     path: "/notes",
     icon: <DescriptionIcon sx={{ height: 20, width: 20 }} />,
   },
   {
-    id: 6,
+    id: 5,
     name: "Spotify",
     path: "/spotify",
     icon: <AudiotrackIcon sx={{ height: 20, width: 20 }}/>,
   },
   {
-    id: 7,
+    id: 6,
     name: "Pomodoro",
     path: "/pomodoro",
     icon: <TimerIcon sx={{ height: 20, width: 20 }}/>,
