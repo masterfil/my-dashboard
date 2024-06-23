@@ -2,7 +2,6 @@ import styled from 'styled-components'
 import { Time } from '../Widget/Time'
 import { CurrentDate } from '../Widget/CurrentDate'
 import { AccessTimeIcon, CalendarTodayIcon } from '../Icons'
-import { FlexWrapper } from '../Common/commonStyle'
 import { DarkModeToggler } from '../DarkMode'
 import { Theme } from '../../hooks/useDarkMode'
 
@@ -10,6 +9,13 @@ interface HeaderProps {
   theme: Theme
   toggleTheme: () => void
 }
+
+export const FlexWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+`;
 
 const Nav = styled.nav`
     display: flex;

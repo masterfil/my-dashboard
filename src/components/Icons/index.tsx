@@ -29,5 +29,5 @@ export {
     WbSunnyIcon,
     NightlightIcon,
     AudiotrackIcon,
-    HomeIcon
+    HomeIcon,
 }

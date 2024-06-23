@@ -1,36 +1,26 @@
 import { useEffect, useState } from "react";
 import { BaseContainer } from "../../Common/BaseContainer";
 import { TitlePage } from "../../Common/Typography";
-import { Button, ButtonWrapper, Timer, TimerContainer } from "../../Common/commonStyle";
+import {
+  ButtonTimer,
+  ButtonWrapper,
+  Timer,
+  TimerContainer,
+  TomatosContainer,
+} from "./style";
+import { Text } from "../../Common/Typography/index";
+import { GiTomato } from "react-icons/gi";
+
+const INITIAL_TIME = 1500; // 25 minutes
+const BREAK_TIME = 300; // 5 minutes
+
+type BtnAction = "start" | "stop" | "reset" | "";
 
 export const Pomodoro = () => {
-  const [seconds, setSeconds] = useState(1500);
+  const [seconds, setSeconds] = useState(INITIAL_TIME);
   const [isActive, setIsActive] = useState(false);
-  const [btnActive, setBtnActive] = useState('')
-
-  const toggleTimer = () => {
-    setIsActive((prevState) => !prevState);
-    setBtnActive('start')
-  };
-
-  const stopTimer = () => {
-    setIsActive(false);
-    setBtnActive('stop')
-  };
-
-  const resetTimer = () => {
-    setIsActive(false);
-    setSeconds(1500);
-    setBtnActive('reset')
-  };
-
-  const formatTime = (seconds: number) => {
-    const minutes = Math.floor(seconds / 60);
-    const remainingSeconds = seconds % 60;
-    return `${minutes < 10 ? "0" : ""}${minutes}:${
-      remainingSeconds < 10 ? "0" : ""
-    }${remainingSeconds}`;
-  };
+  const [btnActive, setBtnActive] = useState<BtnAction>("");
+  const [pomodoroCounter, setPomodoroCounter] = useState(0);
 
   useEffect(() => {
     if (isActive) {
@@ -45,9 +35,42 @@ export const Pomodoro = () => {
 
   useEffect(() => {
     if (seconds === 0) {
-      setSeconds(300);
+      setSeconds(BREAK_TIME);
+      setIsActive(false);
+      setBtnActive("stop");
+      setPomodoroCounter(pomodoroCounter + 1);
     }
-  }, [seconds]);
+  }, [seconds, pomodoroCounter]);
+
+  const toggleTimer = () => {
+    setIsActive((prevState) => !prevState);
+    setBtnActive("start");
+  };
+
+  const stopTimer = () => {
+    setIsActive(false);
+    setBtnActive("stop");
+  };
+
+  const resetTimer = () => {
+    setIsActive(false);
+    setSeconds(INITIAL_TIME);
+    setBtnActive("reset");
+  };
+
+  const formatTime = (seconds: number) => {
+    const minutes = Math.floor(seconds / 60);
+    const remainingSeconds = seconds % 60;
+    return `${minutes < 10 ? "0" : ""}${minutes}:${
+      remainingSeconds < 10 ? "0" : ""
+    }${remainingSeconds}`;
+  };
+
+  const tomatoCounter = () => {
+    return Array.from({ length: pomodoroCounter }, (_, i) => (
+      <GiTomato key={i} color="tomato" fontSize={"30px"} />
+    ));
+  };
 
   return (
     <BaseContainer>
@@ -55,10 +78,23 @@ export const Pomodoro = () => {
       <TimerContainer>
         <Timer>{formatTime(seconds)}</Timer>
         <ButtonWrapper>
-          <Button onClick={toggleTimer} isBtnActive={btnActive === 'start'}>Play</Button>
-          <Button onClick={stopTimer} isBtnActive={btnActive === 'stop'}>Stop</Button>
-          <Button onClick={resetTimer} isBtnActive={btnActive === 'reset'}>Reset</Button>
+          <ButtonTimer
+            onClick={toggleTimer}
+            isBtnActive={btnActive === "start"}
+          >
+            Play
+          </ButtonTimer>
+          <ButtonTimer onClick={stopTimer} isBtnActive={btnActive === "stop"}>
+            Stop
+          </ButtonTimer>
+          <ButtonTimer onClick={resetTimer} isBtnActive={btnActive === "reset"}>
+            Reset
+          </ButtonTimer>
         </ButtonWrapper>
+        <TomatosContainer>
+          <Text>Tomatos counter: {pomodoroCounter}</Text>
+          <div>{tomatoCounter()}</div>
+        </TomatosContainer>
       </TimerContainer>
     </BaseContainer>
   );
