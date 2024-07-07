@@ -10,7 +10,7 @@ interface DarkModeProps {
 const DarkModeContainer = styled.div`
   color: ${({ theme }) => theme.text};
   cursor: pointer;
-  transition: color .3s;
+  transition: color .1s;
   display: flex;
 `
 

@@ -13,6 +13,7 @@ export const SectionStyled = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  
 `;
 
 export const UnorderedList = styled.ul`
@@ -24,11 +25,10 @@ export const UnorderedList = styled.ul`
 
 export const ListItem = styled.li`
   cursor: pointer;
+
 `;
 
-export const ListLink = styled(Link)<{
-  isSelected?: boolean,
-}>`
+export const ListLink = styled(Link)<{isSelected?: boolean,}>`
   text-decoration: none;
   color: ${({ theme }) => theme.text};
   display: flex;
@@ -38,11 +38,10 @@ export const ListLink = styled(Link)<{
   background-color: ${({ theme, isSelected }) =>
     isSelected ? theme.toggleBorder : "none"};
   border-radius: 6px;
-  transition: background-color 0.3s;
 
   &:hover {
     border-radius: 6px;
-    transition: background-color 0.3s;
+    transition: background-color 0.1s;
     background-color: #333333;
   }
 `;

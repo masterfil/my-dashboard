@@ -17,7 +17,7 @@ export const TodoItem = styled.li<{isChecked: boolean}>`
     padding: 8px 10px;
     font-size: 1rem;
     /* background-color: ${({ isChecked }) => isChecked ? '#f0f0f0' : ''}; */
-    transition: background-color .3s;
+    /* transition: background-color .1s; */
     border: 1px solid #d3d3d36b;
     margin-bottom: 1rem;
     border-radius: 4px;
@@ -45,7 +45,7 @@ export const TextTodo = styled.p<{isChecked: boolean}>`
     text-decoration: ${({ isChecked }) => isChecked ? 'line-through' : 'none'};
     /* color: ${({ isChecked }) => isChecked ? 'gray' : 'black'}; */
     color: ${({ theme }) => theme.text};
-    transition: color .3s, text-decoration .3s;
+    transition: all .1s;
 `;
 
 export const TodoWrapper = styled.div`

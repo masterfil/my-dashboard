@@ -10,11 +10,10 @@ import {
   ArrowButton,
   StyledHr,
 } from "./style";
-import { Text } from "../Common/Typography";
-
+import { TextSideBar } from "../Common/Typography";
 interface SideBarProps {
   handleClick: () => void;
-  showName: boolean
+  showName: boolean;
 }
 
 export const Sidebar: React.FC<SideBarProps> = ({ handleClick, showName }) => {
@@ -30,9 +29,13 @@ export const Sidebar: React.FC<SideBarProps> = ({ handleClick, showName }) => {
       <UnorderedList>
         {sidebarData.map((item) => (
           <ListItem key={item.id}>
-            <ListLink to={item.path} isSelected={isSelected(item.path)} showName={showName}>
-              {item.icon}
-              <Text weight="bold">{!showName && item.name}</Text>
+            <ListLink to={item.path} isSelected={isSelected(item.path)}>
+              <>
+                {item.icon}
+                <TextSideBar weight="500" showName={showName}>
+                  {item.name}
+                </TextSideBar>
+              </>
             </ListLink>
           </ListItem>
         ))}
@@ -40,8 +43,8 @@ export const Sidebar: React.FC<SideBarProps> = ({ handleClick, showName }) => {
       <BottomContainer>
         <StyledHr />
         <ArrowButton onClick={handleClick}>
-          {showName && <KeyboardArrowRightIcon />}
-          {!showName && <KeyboardArrowLeftIcon />}
+          {showName && <KeyboardArrowRightIcon sx={{ height: 20, width: 20 }}/>}
+          {!showName && <KeyboardArrowLeftIcon sx={{ height: 20, width: 20 }}/>}
         </ArrowButton>
       </BottomContainer>
     </SectionStyled>

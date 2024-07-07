@@ -11,11 +11,11 @@ interface LayoutProps {
 }
 
 export const Layout: React.FC<LayoutProps> = ({ theme, toggleTheme }) => {
-  const [toggleSideBar, setToggleSideBar] = useState(false);
+  const [toggleSideBar, setToggleSideBar] = useState(true);
 
   const handleClick = () => {
-    setToggleSideBar((s) => !s)
-  }
+    setToggleSideBar((s) => !s);
+  };
 
   return (
     <DashboardContainer togglesidebar={toggleSideBar}>

@@ -10,4 +10,5 @@ export const DashboardContainer = styled.div<{ togglesidebar: boolean }>`
   grid-template-areas:
     "sidebar header"
     "sidebar main";
+  transition: all 0.3s ease-in-out;
 `;

@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 const GridContainer = styled.div`
     padding: .8rem;
-    transition: all 0.50s linear;
+    transition: all .1s linear;
     background-color: ${({ theme }) => theme.background};
     color: #fff;
     /* grid-column: 2 / 3;
