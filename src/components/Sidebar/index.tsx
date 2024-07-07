@@ -1,32 +1,47 @@
 import { useLocation } from "react-router-dom";
-import { KeyboardArrowRightIcon } from "../Icons";
+import { KeyboardArrowLeftIcon, KeyboardArrowRightIcon } from "../Icons";
 import { sidebarData } from "./data";
-import { ListItem, SectionStyled, UnorderedList, ListLink, BottomContainer, ArrowButton, StyledHr } from "./style";
+import {
+  ListItem,
+  SectionStyled,
+  UnorderedList,
+  ListLink,
+  BottomContainer,
+  ArrowButton,
+  StyledHr,
+} from "./style";
+import { Text } from "../Common/Typography";
 
-export const Sidebar = () => {
+interface SideBarProps {
+  handleClick: () => void;
+  showName: boolean
+}
+
+export const Sidebar: React.FC<SideBarProps> = ({ handleClick, showName }) => {
   const location = useLocation();
-  const currentPage = location.pathname
+  const currentPage = location.pathname;
 
   const isSelected = (path: string) => {
-    return currentPage === path
-  }
+    return currentPage === path;
+  };
 
   return (
     <SectionStyled>
       <UnorderedList>
         {sidebarData.map((item) => (
           <ListItem key={item.id}>
-            <ListLink to={item.path} isSelected={isSelected(item.path)}>
+            <ListLink to={item.path} isSelected={isSelected(item.path)} showName={showName}>
               {item.icon}
-              <>{item.name}</>
+              <Text weight="bold">{!showName && item.name}</Text>
             </ListLink>
           </ListItem>
         ))}
       </UnorderedList>
       <BottomContainer>
         <StyledHr />
-        <ArrowButton>
-          <KeyboardArrowRightIcon />
+        <ArrowButton onClick={handleClick}>
+          {showName && <KeyboardArrowRightIcon />}
+          {!showName && <KeyboardArrowLeftIcon />}
         </ArrowButton>
       </BottomContainer>
     </SectionStyled>

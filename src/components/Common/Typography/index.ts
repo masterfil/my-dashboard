@@ -2,18 +2,19 @@
 import styled from "styled-components";
 
 export const Heading1 = styled.h1`
-    color: ${({ theme }) => theme.text};
-`
+  color: ${({ theme }) => theme.text};
+`;
 
-export const Text = styled.p`
-    color: ${({ theme }) => theme.text};
-    font-size: 0.875rem;
-`
+export const Text = styled.p<{ weight?: string }>`
+  color: ${({ theme }) => theme.text};
+  font-size: 0.875rem;
+  font-weight:  ${({ weight }) => weight || 'normal'};
+`;
 
 export const TitlePage = styled.h1`
-    margin-bottom: 1rem;
-`
+  margin-bottom: 1rem;
+`;
 
-export const DisabledText = styled.p`   
-    color: gray;
-`
+export const DisabledText = styled.p`
+  color: gray;
+`;

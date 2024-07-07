@@ -1,31 +1,27 @@
-import { NavBar } from '../NavBar'
-import { Sidebar } from '../Sidebar'
-import { Main } from '../Main'
-import { styled } from 'styled-components'
-import { Theme } from '../../hooks/useDarkMode'
+import { NavBar } from "../NavBar";
+import { Sidebar } from "../Sidebar";
+import { Main } from "../Main";
+import { Theme } from "../../hooks/useDarkMode";
+import { useState } from "react";
+import { DashboardContainer } from "./style";
 
 interface LayoutProps {
-    theme: Theme
-    toggleTheme: () => void
+  theme: Theme;
+  toggleTheme: () => void;
 }
 
-const DashboardContainer = styled.div`
-    height: 100vh;
-    display: grid;
-    grid-template-columns: 240px 1fr;
-    grid-template-rows: 60px 1fr;
-    grid-template-areas: 
-    "sidebar header"
-    "sidebar main";
-`
+export const Layout: React.FC<LayoutProps> = ({ theme, toggleTheme }) => {
+  const [toggleSideBar, setToggleSideBar] = useState(false);
 
-export const Layout: React.FC<LayoutProps> = ({theme, toggleTheme}) => {
-    return (
-        <DashboardContainer>
-            <NavBar theme={theme} toggleTheme={toggleTheme}/>
-            <Sidebar />
-            <Main />
-        </DashboardContainer>
-    )
-}
+  const handleClick = () => {
+    setToggleSideBar((s) => !s)
+  }
 
+  return (
+    <DashboardContainer togglesidebar={toggleSideBar}>
+      <NavBar theme={theme} toggleTheme={toggleTheme} />
+      <Sidebar handleClick={handleClick} showName={toggleSideBar} />
+      <Main />
+    </DashboardContainer>
+  );
+};

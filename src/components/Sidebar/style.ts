@@ -19,21 +19,24 @@ export const UnorderedList = styled.ul`
   list-style: none;
   padding: 0;
   margin: 0;
-  padding-top: 2.5rem;
+  /* padding-top: 1rem; */
 `;
 
 export const ListItem = styled.li`
   cursor: pointer;
 `;
 
-export const ListLink = styled(Link)<{isSelected?: boolean}>`
+export const ListLink = styled(Link)<{
+  isSelected?: boolean,
+}>`
   text-decoration: none;
   color: ${({ theme }) => theme.text};
   display: flex;
   align-items: center;
   gap: 10px;
-  padding: 0.5rem 0.4rem;
-  background-color: ${({theme, isSelected}) => isSelected ? theme.toggleBorder : 'none'};
+  padding: 8px 8px;
+  background-color: ${({ theme, isSelected }) =>
+    isSelected ? theme.toggleBorder : "none"};
   border-radius: 6px;
   transition: background-color 0.3s;
 
@@ -51,11 +54,11 @@ export const BottomContainer = styled.div`
 `;
 
 export const ArrowButton = styled.a`
-    display: flex;
-    justify-content: flex-end;
-    cursor: pointer;
-`
+  display: flex;
+  justify-content: flex-end;
+  cursor: pointer;
+`;
 
 export const StyledHr = styled.hr`
   border: 1px solid #d3d3d369;
-`
+`;
