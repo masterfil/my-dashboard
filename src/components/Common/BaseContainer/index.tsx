@@ -19,7 +19,7 @@ export const ContentWrapper = styled.div`
   height: 100%;
   overflow-y: auto;
   box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.1);
-  padding: 2rem;
+  padding: 1.5rem 1.8rem;
   box-sizing: border-box;
 `;
 

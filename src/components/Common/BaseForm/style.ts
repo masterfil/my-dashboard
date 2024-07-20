@@ -11,14 +11,13 @@ export const Form = styled.form`
 
 export const InputStyled = styled.input<{ borderRound?: boolean }>`
   width: 100%;
-  font-size: 1rem;
   padding: 8px 10px;
   box-sizing: border-box;
   border-radius: ${({ borderRound }) => (borderRound ? "25px" : "6px")};
   border: 1px solid #d3d3d36b;
   &:focus {
     outline: 1px solid #d3d3d36b;
-    } 
+  }
 
   /* height: 40px;
     padding: 0 .5rem;
@@ -34,12 +33,11 @@ export const AddButton = styled.button`
   background: none;
   cursor: pointer;
   position: absolute;
-  right: 2px;
-  width: 28px;
-  height: 28px;
+  right: 4px;
+  width: 24px;
+  height: 24px;
 
   & > svg:hover {
     color: #4b4b4b;
   }
-
 `;

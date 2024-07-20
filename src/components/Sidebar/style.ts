@@ -13,7 +13,6 @@ export const SectionStyled = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  
 `;
 
 export const UnorderedList = styled.ul`
@@ -25,18 +24,17 @@ export const UnorderedList = styled.ul`
 
 export const ListItem = styled.li`
   cursor: pointer;
-
 `;
 
-export const ListLink = styled(Link)<{isSelected?: boolean,}>`
+export const ListLink = styled(Link)<{ isSelected?: boolean }>`
   text-decoration: none;
   color: ${({ theme }) => theme.text};
   display: flex;
   align-items: center;
   gap: 10px;
   padding: 8px 8px;
-  background-color: ${({ theme, isSelected }) =>
-    isSelected ? theme.toggleBorder : "none"};
+  background-color: ${({ isSelected }) =>
+    isSelected ? '#75757540' : "none"};
   border-radius: 6px;
 
   &:hover {
@@ -52,10 +50,11 @@ export const BottomContainer = styled.div`
   gap: 0.5rem;
 `;
 
-export const ArrowButton = styled.a`
+export const ArrowButton = styled.a<{ showName?: boolean }>`
   display: flex;
-  justify-content: flex-end;
+  justify-content: ${({ showName }) => (showName ? "center" : "flex-end")};
   cursor: pointer;
+  transition: justify-content 0.3s ease-in-out;
 `;
 
 export const StyledHr = styled.hr`

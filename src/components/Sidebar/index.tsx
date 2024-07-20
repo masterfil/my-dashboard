@@ -42,7 +42,7 @@ export const Sidebar: React.FC<SideBarProps> = ({ handleClick, showName }) => {
       </UnorderedList>
       <BottomContainer>
         <StyledHr />
-        <ArrowButton onClick={handleClick}>
+        <ArrowButton onClick={handleClick} showName={showName}>
           {showName && <KeyboardArrowRightIcon sx={{ height: 20, width: 20 }}/>}
           {!showName && <KeyboardArrowLeftIcon sx={{ height: 20, width: 20 }}/>}
         </ArrowButton>

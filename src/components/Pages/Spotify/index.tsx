@@ -3,7 +3,7 @@ import { BaseContainer, ContentWrapper } from "../../Common/BaseContainer";
 
 const StyledBaseContainer = styled(BaseContainer)`
   ${ContentWrapper} {
-    padding: 0;
+    padding: 0 0;
   }
 `;
 
