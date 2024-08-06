@@ -10,6 +10,7 @@ import {
 } from "./components/Pages";
 import { Layout } from "./components/Layout";
 import { Theme } from "./hooks/useDarkMode";
+import { Weather } from "./components/Pages/Weather";
 
 interface RoutesAppProps {
   theme: Theme;
@@ -27,6 +28,7 @@ export const RoutesApp: React.FC<RoutesAppProps> = ({ theme, toggleTheme }) => {
         <Route path="/notes" element={<Notes />} />
         <Route path="/spotify" element={<Spotify />} />
         <Route path="/pomodoro" element={<Pomodoro />} />
+        <Route path="/weather" element={<Weather />} />
         {/* <Route path="/*" element={<ErrorPage />} /> */}
       </Route>
     </Routes>

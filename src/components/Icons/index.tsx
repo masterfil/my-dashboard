@@ -15,6 +15,17 @@ import AudiotrackIcon from '@mui/icons-material/Audiotrack';
 import HomeIcon from '@mui/icons-material/Home';
 import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
+import FeedIcon from '@mui/icons-material/Feed';
+import AirIcon from '@mui/icons-material/Air';
+import RoomIcon from '@mui/icons-material/Room';
+import DarkModeIcon from '@mui/icons-material/DarkMode';
+import CloudIcon from '@mui/icons-material/Cloud';
+import NightsStayIcon from '@mui/icons-material/NightsStay';
+import GrainIcon from '@mui/icons-material/Grain';
+import WaterDropIcon from '@mui/icons-material/WaterDrop';
+import ThunderstormIcon from '@mui/icons-material/Thunderstorm';
+import AcUnitIcon from '@mui/icons-material/AcUnit';
+import FormatAlignCenterIcon from '@mui/icons-material/FormatAlignCenter';
 
 export {
     FormatListBulletedIcon,
@@ -33,5 +44,16 @@ export {
     AudiotrackIcon,
     HomeIcon,
     KeyboardArrowLeftIcon,
-    KeyboardArrowRightIcon
+    KeyboardArrowRightIcon,
+    FeedIcon,
+    AirIcon,
+    RoomIcon,
+    DarkModeIcon,
+    CloudIcon,
+    NightsStayIcon,
+    GrainIcon,
+    WaterDropIcon,
+    ThunderstormIcon,
+    AcUnitIcon,
+    FormatAlignCenterIcon,
 }

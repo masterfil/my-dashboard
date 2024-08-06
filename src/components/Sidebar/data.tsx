@@ -1,11 +1,21 @@
-import { AssignmentIndIcon, AudiotrackIcon, CalendarMonthIcon, DescriptionIcon, FormatListBulletedIcon, HomeIcon, TimerIcon } from "../Icons";
+import {
+  AssignmentIndIcon,
+  AudiotrackIcon,
+  CalendarMonthIcon,
+  DescriptionIcon,
+  FeedIcon,
+  FormatListBulletedIcon,
+  HomeIcon,
+  TimerIcon,
+  WbSunnyIcon,
+} from "../Icons";
 
 type SidebarItem = {
   id: number;
   name: string;
   path: string;
   icon: JSX.Element;
-}[]
+}[];
 
 export const sidebarData: SidebarItem = [
   {
@@ -42,13 +52,24 @@ export const sidebarData: SidebarItem = [
     id: 5,
     name: "Spotify",
     path: "/spotify",
-    icon: <AudiotrackIcon sx={{ height: 20, width: 20 }}/>,
+    icon: <AudiotrackIcon sx={{ height: 20, width: 20 }} />,
   },
   {
     id: 6,
     name: "Pomodoro",
     path: "/pomodoro",
-    icon: <TimerIcon sx={{ height: 20, width: 20 }}/>,
+    icon: <TimerIcon sx={{ height: 20, width: 20 }} />,
   },
-]
-
+  {
+    id: 7,
+    name: "Weather",
+    path: "/weather",
+    icon: <WbSunnyIcon sx={{ height: 20, width: 20 }} />,
+  },
+  {
+    id: 8,
+    name: "News",
+    path: "/news",
+    icon: <FeedIcon sx={{ height: 20, width: 20 }} />,
+  },
+];

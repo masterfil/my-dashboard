@@ -34,7 +34,7 @@ export const TodoInput = styled.input`
 export const ActionButtonsWrapper = styled.div`
   display: flex;
   gap: 4px;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
 `;
 
 export const TextTodo = styled.p<{ isChecked: boolean }>`

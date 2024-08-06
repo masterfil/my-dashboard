@@ -1,0 +1,52 @@
+import React from "react";
+import {
+  AcUnitIcon,
+  CloudIcon,
+  DarkModeIcon,
+  FormatAlignCenterIcon,
+  ThunderstormIcon,
+  WaterDropIcon,
+  WbSunnyIcon,
+} from "../components/Icons";
+
+export enum WeatherIcons {
+  ClearSkyDay = "01d",
+  ClearSkyNight = "01n",
+  FewCloudsDay = "02d",
+  FewCloudsNight = "02n",
+  ScatteredCloudsDay = "03d",
+  ScatteredCloudsNight = "03n",
+  BrokenCloudsDay = "04d",
+  BrokenCloudsNight = "04n",
+  ShowerRainDay = "09d",
+  ShowerRainNight = "09n",
+  RainDay = "10d",
+  RainNight = "10n",
+  ThunderstormDay = "11d",
+  ThunderstormNight = "11n",
+  SnowDay = "13d",
+  SnowNight = "13n",
+  MistDay = "50d",
+  MistNight = "50n",
+}
+
+export const weatherIcons: Record<WeatherIcons, React.ReactElement<React.ReactSVG>> = {
+  [WeatherIcons.ClearSkyDay]: <WbSunnyIcon sx={{ height: 100, width: 100 }}/>,
+  [WeatherIcons.ClearSkyNight]: <DarkModeIcon sx={{ height: 100, width: 100 }}/>,
+  [WeatherIcons.FewCloudsDay]: <CloudIcon sx={{ height: 100, width: 100 }} />,
+  [WeatherIcons.FewCloudsNight]: <CloudIcon sx={{ height: 100, width: 100 }} />,
+  [WeatherIcons.ScatteredCloudsDay]: <CloudIcon sx={{ height: 100, width: 100 }} />,
+  [WeatherIcons.ScatteredCloudsNight]: <CloudIcon sx={{ height: 100, width: 100 }} />,
+  [WeatherIcons.BrokenCloudsDay]: <CloudIcon sx={{ height: 100, width: 100, color: 'gray'}} />,
+  [WeatherIcons.BrokenCloudsNight]: <CloudIcon sx={{ height: 100, width: 100 }} />,
+  [WeatherIcons.ShowerRainDay]: <WaterDropIcon sx={{ height: 100, width: 100 }} />,
+  [WeatherIcons.ShowerRainNight]: <WaterDropIcon sx={{ height: 100, width: 100 }} />,
+  [WeatherIcons.RainDay]: <WaterDropIcon sx={{ height: 100, width: 100 }} />,
+  [WeatherIcons.RainNight]: <WaterDropIcon sx={{ height: 100, width: 100 }} />,
+  [WeatherIcons.ThunderstormDay]: <ThunderstormIcon sx={{ height: 100, width: 100 }} />,
+  [WeatherIcons.ThunderstormNight]: <ThunderstormIcon sx={{ height: 100, width: 100 }} />,
+  [WeatherIcons.SnowDay]: <AcUnitIcon sx={{ height: 100, width: 100 }} />,
+  [WeatherIcons.SnowNight]: <AcUnitIcon sx={{ height: 100, width: 100 }} />,
+  [WeatherIcons.MistDay]: <FormatAlignCenterIcon sx={{ height: 100, width: 100 }} />,
+  [WeatherIcons.MistNight]: <FormatAlignCenterIcon sx={{ height: 100, width: 100 }} />,
+}
