@@ -9,7 +9,7 @@ export const GridContainer = styled.div`
     grid-row: 2 / 3; */
   display: grid;
   grid-area: main;
-  grid-template-columns: 0.5fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
   grid-template-areas:
     "c1 c2 c3 c4"
