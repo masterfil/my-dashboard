@@ -141,9 +141,7 @@ export const CurrentWeather = ({ showMoreInfo = false }) => {
               <>
                 <TempText>Lat {weather.coord.lat}</TempText>
                 <TempText>Lon {weather.coord.lon}</TempText>
-                <TempText>Location {weather.name}</TempText>
                 <TempText>Temperature {weather.main.temp} °C</TempText>
-                <TempText>Weather {weather.weather[0].description}</TempText>
                 <TempText>Humidity {weather.main.humidity}%</TempText>
                 <TempText>Max {weather.main.temp_max} °C</TempText>
                 <TempText>Min {weather.main.temp_min} °C</TempText>

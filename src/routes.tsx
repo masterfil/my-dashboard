@@ -5,7 +5,7 @@ import {
   HabitsTracker,
   Home,
   Notes,
-  Pomodoro,
+  PomodoroTimer,
   TodosList,
 } from "./components/Pages";
 import { Layout } from "./components/Layout";
@@ -27,7 +27,7 @@ export const RoutesApp: React.FC<RoutesAppProps> = ({ theme, toggleTheme }) => {
         <Route path="/calendar" element={<Calendar />} />
         <Route path="/notes" element={<Notes />} />
         <Route path="/spotify" element={<Spotify />} />
-        <Route path="/pomodoro" element={<Pomodoro />} />
+        <Route path="/pomodoro" element={<PomodoroTimer />} />
         <Route path="/weather" element={<Weather />} />
         {/* <Route path="/*" element={<ErrorPage />} /> */}
       </Route>
