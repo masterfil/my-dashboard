@@ -1,8 +1,15 @@
 import { useEffect, useState } from "react";
 import styled from "styled-components";
-import { RoomIcon } from "../../Icons";
+import {
+  AirIcon,
+  ExploreIcon,
+  KeyboardDoubleArrowDownIcon,
+  KeyboardDoubleArrowUpIcon,
+  RoomIcon,
+  WaterDropIcon,
+} from "../../Icons";
 import { weatherIcons, WeatherIcons } from "../../../utils/weatherIconsMap";
-
+import { Text } from "../../Common/Typography";
 export interface CurrentWeatherProps {
   showMoreInfo?: boolean;
 }
@@ -42,22 +49,30 @@ export const TempCotainer = styled.div`
   flex-direction: column;
 `;
 
-export const Temp = styled.h3`
+export const Temp = styled.p`
   font-size: 4.5rem;
 `;
 
-export const TempText = styled.p``;
+export const TempText = styled.p`
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  gap: 6px;
+`;
 
 export const TempWrapper = styled.div`
   display: flex;
-  justify-content: center;
-  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  /* flex-direction: column; */
 `;
 
 export const TempInfoContainer = styled.div`
   display: flex;
   justify-content: flex-start;
   flex-direction: column;
+  margin-top: 1rem;
+  gap: 2px;
 `;
 
 export const HeaderContainer = styled.div`
@@ -123,29 +138,41 @@ export const CurrentWeather = ({ showMoreInfo = false }) => {
             <h2>{weather.name}</h2>
           </HeaderContainer>
           <TempWrapper>
-            {IconComponent}
             <Temp>{`${Math.floor(weather.main.temp)}°C`}</Temp>
-            <TempText>Weather {weather.weather[0].description}</TempText>
+            {IconComponent}
             {/* <img
               src={`https://openweathermap.org/img/wn/${weather.weather[0].icon}@4x.png`}
               alt="icon weather"
-            /> */}
+              /> */}
           </TempWrapper>
-
+          <TempText>Weather {weather.weather[0].description}</TempText>
           <TempInfoContainer>
-            <TempText>Max {weather.main.temp_max} °C</TempText>
-            <TempText>Min {weather.main.temp_min} °C</TempText>
-            <TempText>Wind {weather.wind.speed} km/h</TempText>
-            <TempText>Humidity {weather.main.humidity}%</TempText>
+            <TempText>
+              <KeyboardDoubleArrowUpIcon sx={{ height: 22, width: 22 }}/>
+              <Text>Max {weather.main.temp_max} °C</Text>
+            </TempText>
+            <TempText>
+              <KeyboardDoubleArrowDownIcon sx={{ height: 22, width: 22 }} />
+              <Text>Min {weather.main.temp_min} °C</Text>
+            </TempText>
+            <TempText>
+              <AirIcon sx={{ height: 22, width: 22 }} />
+              <Text>Wind {weather.wind.speed} km/h</Text>
+            </TempText>
+            <TempText>
+              <WaterDropIcon sx={{ height: 22, width: 22 }} />
+              <Text>Humidity {weather.main.humidity}%</Text>
+            </TempText>
             {showMoreInfo && (
               <>
-                <TempText>Lat {weather.coord.lat}</TempText>
-                <TempText>Lon {weather.coord.lon}</TempText>
-                <TempText>Temperature {weather.main.temp} °C</TempText>
-                <TempText>Humidity {weather.main.humidity}%</TempText>
-                <TempText>Max {weather.main.temp_max} °C</TempText>
-                <TempText>Min {weather.main.temp_min} °C</TempText>
-                <TempText>Wind {weather.wind.speed} km/h</TempText>
+                <TempText>
+                  <ExploreIcon sx={{ height: 22, width: 22 }} />
+                  <Text>Lat {weather.coord.lat}</Text>
+                </TempText>
+                <TempText>
+                  <ExploreIcon sx={{ height: 22, width: 22 }} />
+                  <Text>Lon {weather.coord.lon}</Text>
+                </TempText>
               </>
             )}
           </TempInfoContainer>

@@ -26,6 +26,10 @@ import WaterDropIcon from '@mui/icons-material/WaterDrop';
 import ThunderstormIcon from '@mui/icons-material/Thunderstorm';
 import AcUnitIcon from '@mui/icons-material/AcUnit';
 import FormatAlignCenterIcon from '@mui/icons-material/FormatAlignCenter';
+import KeyboardDoubleArrowUpIcon from '@mui/icons-material/KeyboardDoubleArrowUp';
+import KeyboardDoubleArrowDownIcon from '@mui/icons-material/KeyboardDoubleArrowDown';
+import ExploreIcon from '@mui/icons-material/Explore';
+import DeviceThermostatIcon from '@mui/icons-material/DeviceThermostat';
 
 export {
     FormatListBulletedIcon,
@@ -56,4 +60,8 @@ export {
     ThunderstormIcon,
     AcUnitIcon,
     FormatAlignCenterIcon,
+    KeyboardDoubleArrowUpIcon,
+    KeyboardDoubleArrowDownIcon,
+    ExploreIcon,
+    DeviceThermostatIcon
 }
