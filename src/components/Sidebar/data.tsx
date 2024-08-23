@@ -6,8 +6,10 @@ import {
   FeedIcon,
   FormatListBulletedIcon,
   HomeIcon,
+  RoomIcon,
   TimerIcon,
   WbSunnyIcon,
+  YouTubeIcon,
 } from "../Icons";
 
 type SidebarItem = {
@@ -71,5 +73,17 @@ export const sidebarData: SidebarItem = [
     name: "News",
     path: "/news",
     icon: <FeedIcon sx={{ height: 20, width: 20 }} />,
+  },
+  {
+    id: 9,
+    name: "Maps",
+    path: "/maps",
+    icon: <RoomIcon sx={{ height: 20, width: 20 }} />,
+  },
+  {
+    id: 10,
+    name: "YouTube",
+    path: "/youtube",
+    icon: <YouTubeIcon sx={{ height: 20, width: 20 }} />,
   },
 ];

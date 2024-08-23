@@ -1,12 +1,12 @@
 import { BaseContainer } from "../../Common/BaseContainer";
 import { TitlePage } from "../../Common/Typography";
-import { CurrentWeather } from "./CurrentWeather";
+import { YouTubePlayer } from "./YouTube";
 
-export const Weather = () => {
+export const Youtube = () => {
   return (
     <BaseContainer>
-      <TitlePage>Weather</TitlePage>
-      <CurrentWeather showMoreInfo/>
+      <TitlePage>YouTube</TitlePage>
+      <YouTubePlayer></YouTubePlayer>
     </BaseContainer>
   );
 };

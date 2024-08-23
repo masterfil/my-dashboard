@@ -4,6 +4,7 @@ import {
   Calendar,
   HabitsTracker,
   Home,
+  Maps,
   Notes,
   PomodoroTimer,
   TodosList,
@@ -11,6 +12,8 @@ import {
 import { Layout } from "./components/Layout";
 import { Theme } from "./hooks/useDarkMode";
 import { Weather } from "./components/Pages/Weather";
+import { News } from "./components/Pages/News";
+import { Youtube } from "./components/Pages/YouTube";
 
 interface RoutesAppProps {
   theme: Theme;
@@ -29,6 +32,9 @@ export const RoutesApp: React.FC<RoutesAppProps> = ({ theme, toggleTheme }) => {
         <Route path="/spotify" element={<Spotify />} />
         <Route path="/pomodoro" element={<PomodoroTimer />} />
         <Route path="/weather" element={<Weather />} />
+        <Route path="/news" element={<News />} />
+        <Route path="/maps" element={<Maps />} />
+        <Route path="/youtube" element={<Youtube />} />
         {/* <Route path="/*" element={<ErrorPage />} /> */}
       </Route>
     </Routes>

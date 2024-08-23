@@ -148,7 +148,7 @@ export const CurrentWeather = ({ showMoreInfo = false }) => {
           <TempText>Weather {weather.weather[0].description}</TempText>
           <TempInfoContainer>
             <TempText>
-              <KeyboardDoubleArrowUpIcon sx={{ height: 22, width: 22 }}/>
+              <KeyboardDoubleArrowUpIcon sx={{ height: 22, width: 22 }} />
               <Text>Max {weather.main.temp_max} °C</Text>
             </TempText>
             <TempText>

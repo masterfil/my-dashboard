@@ -2,6 +2,8 @@ import { CurrentWeather } from "../Weather/CurrentWeather";
 import { Todos } from "../Todo/Todos";
 import { GridBox, GridContainer, StyledGridBox } from "./styles";
 import { Timer } from "../Pomodoro/Timer";
+import { GoogleMaps } from "../Maps/GoogleMaps";
+import { YouTubePlayer } from "../YouTube/YouTube";
 
 export const Home = () => {
   return (
@@ -29,8 +31,12 @@ export const Home = () => {
           loading="lazy"
         ></iframe>
       </StyledGridBox>
-      <GridBox></GridBox>
-      <GridBox></GridBox>
+      <StyledGridBox>
+        <YouTubePlayer />
+      </StyledGridBox>
+      <StyledGridBox>
+        <GoogleMaps />
+      </StyledGridBox>
       <GridBox></GridBox>
       <GridBox></GridBox>
       <GridBox></GridBox>

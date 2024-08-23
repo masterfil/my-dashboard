@@ -30,6 +30,7 @@ import KeyboardDoubleArrowUpIcon from '@mui/icons-material/KeyboardDoubleArrowUp
 import KeyboardDoubleArrowDownIcon from '@mui/icons-material/KeyboardDoubleArrowDown';
 import ExploreIcon from '@mui/icons-material/Explore';
 import DeviceThermostatIcon from '@mui/icons-material/DeviceThermostat';
+import YouTubeIcon from '@mui/icons-material/YouTube';
 
 export {
     FormatListBulletedIcon,
@@ -63,5 +64,6 @@ export {
     KeyboardDoubleArrowUpIcon,
     KeyboardDoubleArrowDownIcon,
     ExploreIcon,
-    DeviceThermostatIcon
+    DeviceThermostatIcon,
+    YouTubeIcon
 }
