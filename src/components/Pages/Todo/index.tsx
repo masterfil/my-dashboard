@@ -4,7 +4,7 @@ import { Todos } from "./Todos";
 export const TodosList = () => {
   return (
     <BaseContainer>
-    <Todos></Todos>
+      <Todos />
     </BaseContainer>
   );
 };

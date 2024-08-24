@@ -7,7 +7,7 @@ export const TimerContainer = styled.div`
   align-items: center;
 `;
 
-export const Time = styled.div`
+export const Time = styled.p`
   font-size: 5rem;
   font-weight: bold;
 `;

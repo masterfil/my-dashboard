@@ -1,4 +1,4 @@
-import { SetStateAction, useState } from "react";
+import { SetStateAction, useEffect, useState } from "react";
 import { TitlePage } from "../../Common/Typography";
 import { FormTodo } from "./FormTodo";
 import { TodoList } from "./TodoList";
@@ -9,7 +9,7 @@ import { Button } from "../../Common/Button";
 export interface Todos {
   id: string;
   text: string;
-  isChecked: boolean;
+  isComplete: boolean;
   isEditing: boolean;
 }
 
@@ -18,6 +18,7 @@ export const Todos = () => {
   const [inputValue, setInputValue] = useState("");
   const [todosCompleted, setTodosCompleted] = useState<Todos[]>([]);
   const [todosNotCompleted, setTodosNotCompleted] = useState<Todos[]>([]);
+  const [todoAction, setTodoAction] = useState("all");
 
   const handleChange = (e: { target: { value: SetStateAction<string> } }) => {
     setInputValue(e.target.value);
@@ -28,7 +29,7 @@ export const Todos = () => {
     if (inputValue.trim() !== "") {
       setTodos([
         ...todos,
-        { id: uuidv4(), text: inputValue, isChecked: false, isEditing: false },
+        { id: uuidv4(), text: inputValue, isComplete: false, isEditing: false },
       ]);
       e.currentTarget.reset();
     }
@@ -51,43 +52,66 @@ export const Todos = () => {
   const toggleChecked = (id: string) => {
     setTodos(
       todos.map((todo: Todos) =>
-        todo.id === id ? { ...todo, isChecked: !todo.isChecked } : { ...todo }
+        todo.id === id ? { ...todo, isComplete: !todo.isComplete } : { ...todo }
       )
     );
   };
 
-  const todoCompleted = todos.filter((todo) => todo.isChecked === true);
-  const todoNotCompleted = todos.filter((todo) => todo.isChecked === false);
-  const allTodos = [...todosCompleted, ...todosNotCompleted];
-
-  const filterTodoCompleted = () => {
-    setTodosCompleted(todoCompleted);
+  const handleClick = (action: string) => {
+    setTodoAction(action);
   };
 
-  const filterTodoNotCompleted = () => {
-    setTodosNotCompleted(todoNotCompleted);
+  const renderTodos = () => {
+    if (todoAction === "completed") {
+      return todosCompleted;
+    }
+    if (todoAction === "notcompleted") {
+      return todosNotCompleted;
+    }
+    if (todoAction === "all") {
+      return todos;
+    }
+    return todos;
   };
 
-  const showAllTodos = () => {
-    setTodos(allTodos);
-  };
+  useEffect(() => {
+    if (todoAction === "completed") {
+      setTodosCompleted([
+        ...todos.filter((todo: Todos) => todo.isComplete === true),
+      ]);
+    }
+    if (todoAction === "notcompleted") {
+      setTodosNotCompleted([
+        ...todos.filter((todo: Todos) => todo.isComplete === false),
+      ]);
+    }
+  }, [todoAction, todos]);
 
   return (
     <TodoContainer>
       <TitlePage>Get Shit Done!</TitlePage>
       <ActionButtonsWrapper>
         <Button
-          onClick={filterTodoCompleted}
-        >{`Completed ${todoCompleted.length}`}</Button>
+          onClick={() => handleClick("completed")}
+          isSelected={todoAction === "completed"}
+        >{`Completed ${
+          todos.filter((todo) => todo.isComplete).length
+        }`}</Button>
         <Button
-          onClick={filterTodoNotCompleted}
-        >{`Not completed ${todoNotCompleted.length}`}</Button>
-        <Button onClick={showAllTodos}>{`All todos ${allTodos.length}`}</Button>
+          onClick={() => handleClick("notcompleted")}
+          isSelected={todoAction === "notcompleted"}
+        >{`Not completed ${
+          todos.filter((todo) => todo.isComplete === false).length
+        }`}</Button>
+        <Button
+          onClick={() => handleClick("all")}
+          isSelected={todoAction === "all"}
+        >{`All todos ${todos.length}`}</Button>
       </ActionButtonsWrapper>
 
       <FormTodo handleSubmit={addTodo} handleChange={handleChange} />
       <TodoList
-        todos={todos}
+        todos={renderTodos()}
         toggleChecked={toggleChecked}
         deleteTodo={deleteTodo}
         editTodo={editTodo}

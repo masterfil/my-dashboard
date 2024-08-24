@@ -31,7 +31,9 @@ import KeyboardDoubleArrowDownIcon from '@mui/icons-material/KeyboardDoubleArrow
 import ExploreIcon from '@mui/icons-material/Explore';
 import DeviceThermostatIcon from '@mui/icons-material/DeviceThermostat';
 import YouTubeIcon from '@mui/icons-material/YouTube';
-
+import CheckBoxIcon from '@mui/icons-material/CheckBox';
+import AssessmentIcon from '@mui/icons-material/Assessment';
+import TimelineIcon from '@mui/icons-material/Timeline';
 export {
     FormatListBulletedIcon,
     CalendarMonthIcon,
@@ -65,5 +67,8 @@ export {
     KeyboardDoubleArrowDownIcon,
     ExploreIcon,
     DeviceThermostatIcon,
-    YouTubeIcon
+    YouTubeIcon,
+    CheckBoxIcon,
+    AssessmentIcon,
+    TimelineIcon
 }

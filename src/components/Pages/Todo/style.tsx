@@ -9,14 +9,14 @@ export const ListItemContainer = styled.ul`
   width: 100%;
 `;
 
-export const TodoItem = styled.li<{ isChecked: boolean }>`
+export const TodoItem = styled.li<{ isComplete: boolean }>`
   display: flex;
   align-items: center;
   justify-content: space-between;
   list-style: none;
   padding: 8px 10px;
   font-size: 1rem;
-  /* background-color: ${({ isChecked }) => (isChecked ? "#f0f0f0" : "")}; */
+  /* background-color: ${({ isComplete }) => (isComplete ? "#f0f0f0" : "")}; */
   /* transition: background-color .1s; */
   border: 1px solid #d3d3d36b;
   margin-bottom: 0.5rem;
@@ -37,12 +37,12 @@ export const ActionButtonsWrapper = styled.div`
   margin-bottom: 0.5rem;
 `;
 
-export const TextTodo = styled.p<{ isChecked: boolean }>`
+export const TextTodo = styled.p<{ isComplete: boolean }>`
   max-width: 500px;
   font-size: 0.875rem;
   word-wrap: break-word;
-  text-decoration: ${({ isChecked }) => (isChecked ? "line-through" : "none")};
-  /* color: ${({ isChecked }) => (isChecked ? "gray" : "black")}; */
+  text-decoration: ${({ isComplete }) => (isComplete ? "line-through" : "none")};
+  /* color: ${({ isComplete }) => (isComplete ? "gray" : "black")}; */
   color: ${({ theme }) => theme.text};
   transition: all 0.1s;
 `;

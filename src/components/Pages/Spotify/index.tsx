@@ -1,12 +1,5 @@
-import styled from "styled-components";
-import { BaseContainer, ContentWrapper } from "../../Common/BaseContainer";
+import { StyledBaseContainer } from "../../Common/commonStyle";
 import { SpotifyPlaylist } from "./SpotifyPlaylist";
-
-const StyledBaseContainer = styled(BaseContainer)`
-  ${ContentWrapper} {
-    padding: 0 0;
-  }
-`;
 
 export const Spotify = () => {
   return (
