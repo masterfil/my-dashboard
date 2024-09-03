@@ -1,38 +1,80 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { BaseContainer } from "../../Common/BaseContainer";
 import { TitlePage } from "../../Common/Typography";
-import { HabitTable } from "./HabitTable";
 import HabitForm from "./HabitForm";
-import { HabitList } from "./HabitList";
+import { HabitTable } from "./HabitTable";
 import { useMonthDays } from "../../../hooks/useMonthDays";
-import { Wrapper } from "./style";
-
-export interface Task {
-  id: number;
-  title: string;
-  day: number;
-  isCompleted: boolean;
-}
-
-export interface TaskCollection {
-  [key: string]: Task[];
-}
+import { HabitsContainer } from "./style";
 
 export interface Habits {
   name: string;
-  isEditing: boolean;
+  trackerList: { [key: number]: { completed: boolean } };
 }
 
-const habitsMock = [
-  { name: "Habit 1", isEditing: false },
-  { name: "Habit 2", isEditing: false },
+const habitsMock: Habits[] = [
+  {
+    name: "Habit 1",
+    trackerList: {
+      1: { completed: true },
+      2: { completed: false },
+      3: { completed: true },
+      4: { completed: false },
+      5: { completed: false },
+      6: { completed: false },
+      7: { completed: false },
+      8: { completed: true },
+      9: { completed: true },
+      10: { completed: false },
+      11: { completed: true },
+      12: { completed: false },
+      13: { completed: false },
+      14: { completed: false },
+      15: { completed: true },
+      16: { completed: false },
+      17: { completed: false },
+      18: { completed: false },
+      19: { completed: false },
+      20: { completed: false },
+      21: { completed: true },
+      22: { completed: false },
+      23: { completed: false },
+      24: { completed: true },
+      25: { completed: false },
+      26: { completed: true },
+      27: { completed: false },
+      28: { completed: true },
+      29: { completed: false },
+      30: { completed: false },
+      31: { completed: false },
+    },
+  },
+  // {
+  //   name: "Habit 2",
+  //   trackerList: {
+  //     1: { completed: false },
+  //     2: { completed: true },
+  //     3: { completed: true },
+  //   },
+  // },
 ];
 
 export const HabitsTracker = () => {
   const [habits, setHabits] = useState<Habits[]>(habitsMock);
   const [inputValue, setInputValue] = useState("");
-  const [trackHabits, setTrackHabits] = useState<TaskCollection>({});
-  const { day, days } = useMonthDays();
+  const { days } = useMonthDays();
+
+  const habitList: { [key: number]: { completed: boolean } } = days.reduce(
+    (acc, day) => {
+      return {
+        ...acc,
+        [day]: { completed: false },
+      };
+    },
+    {}
+  );
+
+  console.log(habitList, "habitList");
+  console.log(habits, "habits");
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInputValue(e.target.value);
@@ -41,80 +83,18 @@ export const HabitsTracker = () => {
   const addHabit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (inputValue.trim() !== "") {
-      setHabits([...habits, { name: inputValue, isEditing: false }]);
+      setHabits([...habits, { name: inputValue, trackerList: habitList }]);
       e.currentTarget.reset();
     }
   };
 
-  const handleCheckboxClick = (habitName: string, habitDay: number) => {
-    setTrackHabits((prevTrackHabits) => {
-      const updatedTrackHabits = { ...prevTrackHabits };
-      updatedTrackHabits[habitName] = updatedTrackHabits[habitName].map(
-        (habit) =>
-          habit.day === habitDay
-            ? { ...habit, isCompleted: !habit.isCompleted }
-            : habit
-      );
-      return updatedTrackHabits;
-    });
-  };
-
-  const handleDeleteHabit = (habitName: string) => {
-    setHabits((prevState) =>
-      prevState.filter((habit) => habit.name !== habitName)
-    );
-  };
-
-  const handleEditHabit = (habitName: string, newHabitName: string) => {
-    setHabits((prevState) =>
-      prevState.map((habit) => {
-        return habit.name === habitName
-          ? {
-              ...habit,
-              name: newHabitName || habitName,
-              isEditing: !habit.isEditing,
-            }
-          : habit;
-      })
-    );
-  };
-
-  useEffect(() => {
-    const habitsList: TaskCollection = {};
-
-    habits.forEach((habit) => {
-      const habitTasks: Task[] = days.map((day) => ({
-        id: day,
-        title: habit.name,
-        day,
-        isCompleted: false,
-      }));
-      habitsList[habit.name] = habitTasks;
-    });
-
-    setTrackHabits(habitsList);
-    console.log(trackHabits, "trackHabits");
-    
-  }, [days, habits]);
-
   return (
     <BaseContainer>
-      <Wrapper>
+      <HabitsContainer>
         <TitlePage>Habit Tracker</TitlePage>
         <HabitForm handleChange={handleChange} handleSubmit={addHabit} />
-        <HabitList
-          habits={habits}
-          handleDeleteHabit={handleDeleteHabit}
-          handleEditHabit={handleEditHabit}
-        />
-      </Wrapper>
-      <HabitTable
-        habits={habits}
-        days={days}
-        // habitsList={trackHabits}
-        handleCheckboxClick={handleCheckboxClick}
-        currentDay={day}
-      />
+      </HabitsContainer>
+      <HabitTable habits={habits} />
     </BaseContainer>
   );
 };

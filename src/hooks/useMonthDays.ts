@@ -1,4 +1,3 @@
-import { useMemo } from "react";
 interface Monthdays {
   currentDateString: string;
   day: number;
@@ -7,19 +6,17 @@ interface Monthdays {
 }
 
 export const useMonthDays = (): Monthdays => {
-  return useMemo(() => {
-    const date = new Date();
-    const currentDateString = date.toDateString();
-    const day = date.getDate();
-    const year = date.getFullYear();
-    const month = date.getMonth() + 1;
-    const monthDays = new Date(year, month, 0).getDate();
+  const date = new Date();
+  const currentDateString = date.toDateString();
+  const day = date.getDate();
+  const year = date.getFullYear();
+  const month = date.getMonth() + 1;
+  const monthDays = new Date(year, month, 0).getDate();
 
-    const days = [];
-    for (let i = 1; i <= monthDays; i++) {
-      days.push(i);
-    }
+  const days = [];
+  for (let i = 1; i <= monthDays; i++) {
+    days.push(i);
+  }
 
-    return { currentDateString, day, days, month };
-  }, []);
+  return { currentDateString, day, days, month };
 };

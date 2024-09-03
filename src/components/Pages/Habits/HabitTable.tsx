@@ -1,46 +1,43 @@
 import { Habits } from ".";
-import { TableHeader, TableRow, TableStyled } from "./style";
+import { TodoInput } from "../Todo/style";
+import { StyledTable } from "./style";
 
 interface HabitTableProps {
   habits: Habits[];
-  currentDay: number;
-  days: number[];
-  handleCheckboxClick: (habitName: string, dayIndex: number) => void;
 }
 
-export const HabitTable: React.FC<HabitTableProps> = ({
-  habits,
-  currentDay,
-  days,
-  handleCheckboxClick,
-}) => {
+export const HabitTable: React.FC<HabitTableProps> = ({ habits }) => {
+  console.log(habits);
+
   return (
-    <TableStyled>
+    <StyledTable>
       <thead>
-        <TableRow>
-          <TableHeader>Days</TableHeader>
-          {habits.map((habit, index) => {
-            return <TableHeader key={index}>{habit.name}</TableHeader>;
-          })}
-        </TableRow>
+        <tr>
+          <th>Habit Name</th>
+          {habits.length > 0 &&
+            Object.keys(habits[0].trackerList).map((day, index) => (
+              <th key={index}>{day}</th>
+            ))}
+        </tr>
       </thead>
       <tbody>
-        {days.map((day, index) => (
-          <TableRow key={index} bgColor={day === currentDay}>
-            <td>{day}</td>
-            {habits.map((habit, habitIndex) => (
-              <td key={habitIndex}>
-                <input
+        {habits.map((habit, habitIndex) => (
+          <tr key={habitIndex}>
+            <td>{habit.name}</td>
+            {Object.keys(habit.trackerList).map((day, index) => (
+              <td key={index}>
+                <TodoInput
                   type="checkbox"
-                  name={`checkbox-${index}-${habitIndex}`}
-                  onClick={() => handleCheckboxClick(habit.name, day)}
-                  readOnly
+                  // name={todo.text}
+                  // value={todo.text}
+                  checked={habit.trackerList[parseInt(day)].completed}
+                  // onClick={() => toggleChecked(todo.id)}
                 />
               </td>
             ))}
-          </TableRow>
+          </tr>
         ))}
       </tbody>
-    </TableStyled>
+    </StyledTable>
   );
 };

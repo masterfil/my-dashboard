@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import { Todos } from '.'
 import { EditForm } from '../../Common/EditForm'
+import { Todos } from './Todos'
 
 interface EditTodoProps {
     todo: Todos
