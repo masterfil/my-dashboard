@@ -44,7 +44,7 @@ export const GoogleMaps = () => {
       height="100%"
       frameBorder="0"
       referrerPolicy="no-referrer-when-downgrade"
-      src={`https://www.google.com/maps/embed/v1/place?key=AIzaSyBxytAfkznZRA4NYh_E2E6apQKHu1kCyAk&q=${position}`}
+      src={`https://www.google.com/maps/embed/v1/place?key=&q=${position}`}
       allowFullScreen
       style={{ borderRadius: "10px" }}
     ></iframe>
